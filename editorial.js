@@ -337,7 +337,7 @@ window.ED = {
     }
   },
   'machala|1': {
-    syn: 'Eduardo González es empresario. Su hoja de vida declara ingeniería industrial, que no aparece en el registro de títulos consultado por Primicias. No registra cargos públicos. Llega con la lista 1, por Centro Democrático.',
+    syn: 'Eduardo González es empresario. Su hoja de vida declara ingeniería industrial, que no aparece en el registro público de títulos. No registra cargos públicos. Llega con la lista 1, por Centro Democrático.',
     eps: {
       origen: { t: 'El empresario', k: '¿Quién es antes de la política?', d: 'Negocios, asistencia social y un título por verificar.' },
       tray: { t: 'Sin cargos públicos', k: '¿Qué ha hecho?', d: 'Sin funciones en el Estado. Y lo que las fuentes no detallan.' },

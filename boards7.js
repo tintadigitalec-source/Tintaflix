@@ -21,7 +21,7 @@
     tx: { kk: 'Registros públicos', h: 'Lo que consta' },
     n: 'Registros públicos. Título registrado: ' + tit + '. Último cargo público: ' + cargo + '.' });
   /* lo que Ecuador Chequea verificó en el debate del 13 de noviembre */
-  const chq = (veredicto, b) => ({ ch: 'a', fu: ['ecq'], m: [card('Ecuador Chequea · debate del 13 de noviembre', veredicto, 0, 40, 540, -1.5, { fx: 'hv' })],
+  const chq = (veredicto, b) => ({ ch: 'a', fu: ['ecq'], m: [card('Verificación del debate · 13 de noviembre', veredicto, 0, 40, 540, -1.5, { fx: 'hv' })],
     tx: { h: 'Bajo la lupa', b } });
 
   const G = {

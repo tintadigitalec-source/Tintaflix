@@ -77,7 +77,7 @@
       { ch: 'a', fu: ['hv'], m: [foto(Dc(s) + 'retrato.webp', 140, -50, 400, -2.5)], ty: 500,
         tx: { kk: K1, h: 'El empresario', b: 'Eduardo Fabián *González Terreros*. Su hoja de vida declara ingeniería industrial.' } },
       { ch: 'a', fu: ['pmp'], m: [card('Consulta de títulos', 'Tercer y cuarto nivel: sin registro', 0, 40, 480, 1.5, { fx: 'hv' })],
-        tx: { h: 'Un dato por cruzar', b: 'El registro de títulos que consultó Primicias *no muestra* ese título.' } },
+        tx: { h: 'Un dato por cruzar', b: 'El registro público de títulos *no muestra* ese título.' } },
       { ch: 'a', fu: ['kch'], m: [foto(Dc(s) + 'barrio.webp', 60, 0, 540, -1.5)],
         tx: { h: 'Empresa y ayuda social', b: 'La prensa local lo vincula a los *negocios* y a iniciativas de asistencia a sectores vulnerables.' } }
     ]);
