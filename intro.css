@@ -1,0 +1,62 @@
+/* TINTAFLIX · entrada v2: instalación de televisores CRT (placa fotográfica + pantallas vivas) */
+#intro.v2{background:#050506;display:block;cursor:pointer}
+#intro.v2 .ix-stage{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+#intro.v2 .ix-cam{position:absolute;inset:0;transform-origin:50% 50%;will-change:transform}
+#intro.v2 .ix-plate{position:absolute;inset:0;width:100%;height:100%;display:block;filter:brightness(calc(var(--room,.08) * 1.25)) contrast(1.06) saturate(.85);transition:filter 1.6s ease}
+#intro.v2 .ix-edge{position:absolute;inset:-2px;pointer-events:none;background:radial-gradient(ellipse 60% 62% at 50% 52%,transparent 55%,rgba(5,5,6,.75) 82%,#050506 100%)}
+#intro.v2 .ix-glow{position:absolute;pointer-events:none;border-radius:50%;opacity:0;mix-blend-mode:screen;transition:opacity .5s ease;
+  background:radial-gradient(closest-side,rgba(190,210,255,.30),rgba(150,175,235,.10) 55%,transparent 100%);filter:blur(6px)}
+#intro.v2 .ix-glow.on{opacity:var(--gl,1)}
+#intro.v2 .ix-scr{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .12s linear}
+#intro.v2 .ix-scr.on{opacity:1}
+#intro.v2 .ix-box{position:absolute;overflow:hidden;background:#0b0d10;container-type:size}
+#intro.v2 .ix-box > *{position:absolute;inset:0;width:100%;height:100%}
+#intro.v2 .ix-box img.ph{object-fit:cover;filter:contrast(1.12) saturate(.9) brightness(1.08)}
+#intro.v2 .ix-box .clg{background:#101214}
+#intro.v2 .ix-box .clg img{position:absolute;height:auto;filter:drop-shadow(0 6px 10px rgba(0,0,0,.6))}
+#intro.v2 .ix-box .lg{display:grid;place-items:center;background:radial-gradient(ellipse at 50% 45%,#2a0507,#070707 70%)}
+#intro.v2 .ix-box .lg img{width:72%;height:auto;position:static;filter:drop-shadow(0 0 18px rgba(229,9,20,.55))}
+#intro.v2 .ix-box .lg small{position:absolute;bottom:13%;left:0;right:0;text-align:center;font:600 5.5cqh/1 "Open Sans",sans-serif;letter-spacing:.32em;color:#e8e8e8;text-transform:uppercase}
+#intro.v2 .ix-box .bars{background:linear-gradient(90deg,#d9d9d9 0 14.28%,#b5b5b5 0 28.57%,#e50914 0 42.86%,#7d7d7d 0 57.14%,#a80810 0 71.43%,#3b3b3b 0 85.71%,#101010 0)}
+#intro.v2 .ix-box .bars::after{content:"";position:absolute;left:0;right:0;bottom:0;height:22%;background:linear-gradient(90deg,#0a0a0a 0 30%,#f2f2f2 0 45%,#0a0a0a 0 70%,#e50914 0 80%,#0a0a0a 0)}
+#intro.v2 .ix-box canvas.nz{image-rendering:pixelated}
+#intro.v2 .ix-box .txt{display:grid;place-items:center;background:#0a0a0b;color:#f3f3f3;font:400 17cqh/.95 "Bebas Neue",sans-serif;text-align:center;letter-spacing:.02em;padding:6%}
+#intro.v2 .ix-box .txt p{margin:0}
+#intro.v2 .ix-box .txt b{color:#e50914;font-weight:400}
+/* capa CRT: líneas, curvatura, parpadeo y barra de barrido (solo dentro de la pantalla) */
+#intro.v2 .ix-crt{position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(180deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px),
+    radial-gradient(ellipse 70% 70% at 50% 50%,transparent 55%,rgba(0,0,0,.55) 100%);mix-blend-mode:multiply}
+#intro.v2 .ix-roll{position:absolute;left:0;right:0;height:30%;top:-30%;pointer-events:none;background:linear-gradient(180deg,transparent,rgba(255,255,255,.07),transparent);animation:ixroll 3.4s linear infinite}
+#intro.v2 .ix-flk{position:absolute;inset:0;pointer-events:none;background:#fff;opacity:0;mix-blend-mode:overlay;animation:ixflk .13s steps(2) infinite}
+@keyframes ixroll{to{top:100%}}
+@keyframes ixflk{50%{opacity:.04}}
+/* encendido: línea blanca que se abre */
+#intro.v2 .ix-box .pon{background:#000;display:grid;place-items:center}
+#intro.v2 .ix-box .pon i{display:block;width:100%;height:2px;background:#fff;box-shadow:0 0 12px 3px rgba(220,235,255,.9);animation:ixpon .32s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes ixpon{0%{width:0;height:2px}45%{width:100%;height:2px}100%{width:100%;height:100%;opacity:.0}}
+/* reflejos naturales del cristal (placa) */
+#intro.v2 .ix-refl{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:screen;opacity:.85}
+/* grano fotográfico y viñeta sobre todo el cuadro */
+#intro.v2 .ix-grain{position:absolute;inset:-60px;pointer-events:none;opacity:.13;mix-blend-mode:overlay;background-size:256px 256px;animation:ixgr .5s steps(5) infinite}
+@keyframes ixgr{20%{transform:translate(-37px,23px)}40%{transform:translate(29px,-41px)}60%{transform:translate(-17px,-13px)}80%{transform:translate(43px,31px)}}
+#intro.v2 .ix-vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 75% at 50% 50%,transparent 50%,rgba(0,0,0,.6))}
+/* llamada a entrar */
+#intro.v2 .ix-cta{position:absolute;left:0;right:0;bottom:calc(52px + var(--sab,0px));display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;transform:translateY(12px);transition:opacity .7s ease,transform .7s ease;pointer-events:none;z-index:4}
+#intro.v2.cta .ix-cta{opacity:1;transform:none;pointer-events:auto}
+#intro.v2 .ix-cta .btn{background:#e50914;border:0;color:#fff;min-height:52px;padding:0 30px;border-radius:4px;font:400 26px/1 "Bebas Neue",sans-serif;letter-spacing:.04em;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(229,9,20,.35);cursor:pointer}
+#intro.v2 .ix-cta .btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+#intro.v2 .ix-cta small{color:#cfcfcf;font:600 12px/1.3 "Open Sans",sans-serif;letter-spacing:.06em;text-align:center;text-shadow:0 1px 8px #000}
+#intro.v2 .ix-cta .tap{animation:ixtap 1.8s ease-in-out infinite}
+@keyframes ixtap{50%{opacity:.55}}
+#intro.v2 .skip{z-index:6}
+#intro.v2 .introfoot{z-index:4;color:#8b8b8b}
+/* travesía del cristal */
+#intro.v2 .ix-wash{position:absolute;inset:0;pointer-events:none;opacity:0;z-index:5;background:#f4f4f4}
+#intro.v2.thru .ix-wash{animation:ixwash 1.25s ease-in forwards}
+@keyframes ixwash{0%,55%{opacity:0}80%{opacity:.9;background:#fff}100%{opacity:1;background:#141414}}
+#intro.v2.thru .ix-cta,#intro.v2.thru .skip,#intro.v2.thru .introfoot{opacity:0;transition:opacity .25s}
+@media (prefers-reduced-motion:reduce){
+  #intro.v2 .ix-grain,#intro.v2 .ix-roll,#intro.v2 .ix-flk,#intro.v2 .ix-cta .tap{animation:none}
+  #intro.v2 .ix-plate{transition:none}
+}
