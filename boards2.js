@@ -22,11 +22,13 @@
   /* ------------------------- fuentes ------------------------- */
   const G = {
     hv: ['Hoja de vida inscrita en el CNE (registros públicos de candidaturas, corte 24 de noviembre de 2026)', ''],
+    cne: ['CNE · candidaturas calificadas para las seccionales 2026', 'https://www.cne.gob.ec/'],
     plan: ['Plan de trabajo inscrito en el CNE (portada)', ''],
     cons: ['Consulta a registros públicos: antecedentes penales, obligaciones tributarias en firme (SRI) y pensiones alimenticias. Corte: 24 de noviembre de 2026', ''],
     eu: ['El Universo · «Diez precandidatos inscritos para la Alcaldía de Quito» (19 de agosto de 2026)', 'https://www.eluniverso.com/noticias/politica/diez-precandidatos-inscritos-para-alcaldia-quito-nota/'],
     tam: ['Teleamazonas · perfiles de los diez candidatos a la Alcaldía de Quito (12 de noviembre de 2026)', 'https://www.teleamazonas.com/actualidad/noticias/politica/diez-candidatos-alcaldia-quito-perfiles-elecciones-132875/'],
-    pri: ['Primicias · «Candidatos a la Alcaldía de Quito: quiénes son y qué trayectoria tienen» (noviembre de 2026; datos de CNE, SRI, Contraloría y Ministerio de Educación)', 'https://www.primicias.ec/politica/elecciones/seccionales-adelantadas-2027/candidatos-alcaldia-quito-trayectoria-perfiles-titulos-135722/'],
+    sen: ['Senescyt · registro público de títulos de educación superior (consulta por nombre o cédula)', 'https://www.senescyt.gob.ec/web/guest/consultas'],
+    ctr: ['Contraloría General del Estado · declaraciones patrimoniales juradas (cargos públicos declarados)', 'https://www.contraloria.gob.ec/'],
     prc: ['Primicias · «Quito tiene ahora 12 precandidatos a la Alcaldía» (julio de 2026)', 'https://www.primicias.ec/politica/elecciones/seccionales-adelantadas-2027/precandidatos-alcaldia-quito-cne-adn-correismo-pachakutik-127065/'],
     ecd: ['El Comercio · «Los candidatos a la Alcaldía de Quito debatieron sus propuestas antes de las elecciones» (22 de noviembre de 2026)', 'https://www.elcomercio.com/elecciones/candidatos-alcaldia-quito-debates-propuestas/'],
     pdd: ['Primicias · «Debate por la Alcaldía de Quito: sobraron acusaciones, faltaron propuestas sobre el futuro» (22 de noviembre de 2026)', 'https://www.primicias.ec/politica/elecciones/seccionales-adelantadas-2027/debate-candidatos-alcaldia-quito-debate-cne-elecciones-seccionales-137694/'],
@@ -113,18 +115,18 @@
   /* ===================== GALO ALMEIDA · quito|0 ===================== */
   {
     const s = 'almeida';
-    B('quito|0|origen', 'a1', CH1, ['hv', 'pri', 'eu', 'tam'], [
-      { ch: 'a', fu: ['hv', 'pri'], m: [foto(F(s) + 'foto.webp', 140, -50, 400, -2.5)], ty: 500,
+    B('quito|0|origen', 'a1', CH1, ['hv', 'eu', 'tam', 'sen', 'ctr'], [
+      { ch: 'a', fu: ['hv', 'sen'], m: [foto(F(s) + 'foto.webp', 140, -50, 400, -2.5)], ty: 500,
         tx: { kk: K1, h: 'El estratega', b: 'Galo Vicente *Almeida Garzón*. Economista, con una especialización en cumplimiento y anticorrupción.' } },
       { ch: 'a', fu: ['eu', 'tam'], m: [foto(Dc(s) + 'sala.webp', 60, 0, 540, 1.5)],
         tx: { h: 'Detrás de las campañas', b: 'Su oficio fue diseñar las campañas de otros: asesor político, comunicacional y *estratega electoral*.' } },
       { ch: 'a', fu: ['hv'], m: [card('Ministerio de Inclusión Económica y Social', 'Director de Articulación Territorial', 0, 20, 470, -1.5), card('Secretaría Técnica de Juventudes', 'Especialista de Planificación y Gestión Estratégica', 200, 200, 400, 2)],
         tx: { h: 'Cargos técnicos', b: 'Su hoja de vida registra puestos en el *MIES*, en la Secretaría de Juventudes y en el servicio público de pago de accidentes de tránsito.' } },
-      { ch: 'a', fu: ['hv', 'pri'], ty: 380, m: [dt('2023', 260)],
+      { ch: 'a', fu: ['hv', 'ctr'], ty: 380, m: [dt('2023', 260)],
         tx: { h: 'Último cargo registrado', b: 'Técnico operativo en el *Municipio de Guayaquil*. Es el único de sus cargos con año en los registros.' } }
     ]);
-    B('quito|0|tray', 'a2', CH2, ['hv', 'pri', 'eu', 'prj'], [
-      { ch: 'a', fu: ['pri', 'hv'], m: [foto(Dc(s) + 'debate.webp', 60, 0, 540, -1.5)],
+    B('quito|0|tray', 'a2', CH2, ['hv', 'eu', 'prj', 'ctr'], [
+      { ch: 'a', fu: ['hv', 'ctr'], m: [foto(Dc(s) + 'debate.webp', 60, 0, 540, -1.5)],
         tx: { kk: K2, h: 'Sin cargos de elección', b: 'Su hoja de vida no registra cargos de elección popular. Su trabajo visible está en la *organización política*.' } },
       { ch: 'a', fu: ['eu'], m: [card('Centro Democrático', 'Presidente nacional del movimiento', 0, 40, 470, -2)],
         tx: { h: 'Al frente del partido', b: 'Preside *Centro Democrático* a nivel nacional, el movimiento que fundó el exprefecto del Guayas Jimmy Jairala.' } },
@@ -147,8 +149,8 @@
   /* ===================== HAROLD BURBANO · quito|1 ===================== */
   {
     const s = 'burbano';
-    B('quito|1|origen', 'b1', CH1, ['pbu', 'pmi', 'vbu', 'tam', 'hv'], [
-      { ch: 'a', fu: ['pbu', 'hv'], m: [foto(F(s) + 'foto.webp', 140, -50, 400, -2.5)], ty: 500,
+    B('quito|1|origen', 'b1', CH1, ['pbu', 'pmi', 'vbu', 'tam', 'hv', 'sen'], [
+      { ch: 'a', fu: ['hv', 'sen'], m: [foto(F(s) + 'foto.webp', 140, -50, 400, -2.5)], ty: 500,
         tx: { kk: K1, h: 'El abogado de los derechos', b: 'Harold Andrés *Burbano Villarreal*. Abogado y licenciado en Ciencias Jurídicas por la Universidad Católica.' } },
       { ch: 'a', fu: ['pbu', 'pmi'], m: [card('Universidad Nacional de San Martín · Argentina', 'Maestría en Derechos Humanos y Democratización', 0, 30, 560, -1.5), card('Inredh', 'Coordinador legal', 300, 220, 300, 2)],
         tx: { h: 'Derechos humanos', b: 'Se especializó en derechos humanos y fue coordinador legal de *Inredh*, una organización jurídica de derechos humanos.' } },
@@ -187,8 +189,8 @@
   /* ===================== PAÚL DESAMBLANC · quito|2 ===================== */
   {
     const s = 'desamblanc';
-    B('quito|2|origen', 'd1', CH1, ['hv', 'pri', 'tam'], [
-      { ch: 'a', fu: ['hv', 'pri'], m: [foto(F(s) + 'foto.webp', 140, -50, 400, -2.5)], ty: 500,
+    B('quito|2|origen', 'd1', CH1, ['hv', 'tam', 'sen'], [
+      { ch: 'a', fu: ['hv', 'sen'], m: [foto(F(s) + 'foto.webp', 140, -50, 400, -2.5)], ty: 500,
         tx: { kk: K1, h: 'El procesalista', b: 'Paúl *Desamblanc Cañadas*. Abogado de los tribunales y magíster en Derecho Procesal.' } },
       { ch: 'a', fu: ['tam'], m: [foto(Dc(s) + 'balon.webp', 60, 0, 540, 1.5)],
         tx: { h: 'Abogado y empresario', b: 'Así lo presenta Teleamazonas. Antes de 2021, su hoja de vida no registra *cargos públicos*.' } },
@@ -207,8 +209,8 @@
       { ch: 'a', fu: ['cg3'], m: [card('Comisión Especial de Fiscalización y Control Político', 'Órganos del Sistema Andino de Integración', 0, 40, 560, -1.5)],
         tx: { h: 'Fiscalizar la integración', b: 'Presidió esta comisión e informó al pleno sobre el control a los *organismos andinos*.' } }
     ]);
-    B('quito|2|exp', 'd3', CH3, ['kcr', 'prc', 'ecd', 'pdd', 'cons'], [
-      { ch: 'a', fu: ['prc'], m: [foto(Dc(s) + 'puno.webp', 60, 0, 520, 1.5)],
+    B('quito|2|exp', 'd3', CH3, ['kcr', 'prc', 'ecd', 'pdd', 'cons', 'cne'], [
+      { ch: 'a', fu: ['cne'], m: [foto(Dc(s) + 'puno.webp', 60, 0, 520, 1.5)],
         tx: { kk: K3, h: 'Lista 20', b: 'Llega por *Futuro*, el movimiento que antes se llamaba Democracia Sí.' } },
       { ch: 'a', fu: ['kcr', 'prc'], ty: 380, m: [wd('Contra su partido', 96, -3)],
         tx: { kk: '2024', b: 'Siendo parlamentario de la Izquierda Democrática, objetó ante el TCE la candidatura presidencial de *Carlos Rabascall*, inscrita por su propio partido.' }, n: 'Contra su partido. En 2024, siendo parlamentario de la Izquierda Democrática, objetó ante el TCE la candidatura presidencial de Carlos Rabascall, inscrita por su propio partido.' },
@@ -299,18 +301,18 @@
   /* ===================== CARLA LARREA · quito|5 ===================== */
   {
     const s = 'larrea';
-    B('quito|5|origen', 'l1', CH1, ['t25', 'p25', 'eu', 'hv'], [
-      { ch: 'a', fu: ['t25', 'p25'], m: [foto(F(s) + 'foto.webp', 170, -50, 340, -2.5)], ty: 510,
+    B('quito|5|origen', 'l1', CH1, ['t25', 'p25', 'eu', 'hv', 'sen'], [
+      { ch: 'a', fu: ['t25', 'hv', 'sen'], m: [foto(F(s) + 'foto.webp', 170, -50, 340, -2.5)], ty: 510,
         tx: { kk: K1, h: 'Ingeniera comercial', b: 'Carla Fernanda *Larrea Falconí*. Quiteña, ingeniera comercial por la Universidad Internacional del Ecuador.' } },
       { ch: 'a', fu: ['eu', 'p25'], m: [card('Petróleo · flores · comunicación', 'Sectores de su experiencia profesional', 0, 40, 500, -1.5)],
         tx: { h: 'Tres industrias', b: 'Antes de la política trabajó en los sectores *petrolero, florícola* y de comunicación social e institucional.' } },
       { ch: 'a', fu: ['hv'], m: [card('RTVEcuador', 'Conductora de televisión', 0, 20, 400, 2), card('Superintendencia de Compañías', 'Asistente ejecutiva', 200, 200, 400, -2)],
         tx: { h: 'Dos instituciones públicas', b: 'Fue conductora en la televisión pública y asistente ejecutiva en la *Superintendencia de Compañías*.' } }
     ]);
-    B('quito|5|tray', 'l2', CH2, ['hv', 'pri', 'pcu', 'pdb', 'eu'], [
+    B('quito|5|tray', 'l2', CH2, ['hv', 'pcu', 'pdb', 'eu', 'ctr'], [
       { ch: 'a', fu: [], m: [foto(Dc(s) + 'debate.webp', 60, 0, 540, -1.5)],
         tx: { kk: K2, h: 'De asesora a candidata', b: 'Su paso por lo público combina la *Asamblea Nacional* y una candidatura presidencial.' } },
-      { ch: 'a', fu: ['hv', 'pri'], ty: 380, m: [dt('2026', 280)],
+      { ch: 'a', fu: ['hv', 'ctr'], ty: 380, m: [dt('2026', 280)],
         tx: { h: 'Asesora legislativa', b: 'Su último cargo registrado es de *asesora* en la Asamblea Nacional; antes tuvo otro de menor nivel.' }, n: 'Dos mil veintiséis. Asesora legislativa: su último cargo registrado es de asesora en la Asamblea Nacional; antes tuvo otro de menor nivel.' },
       { ch: 'a', fu: ['pcu'], m: [card('Construye', 'Binomio Henry Cucalón · Carla Larrea', 0, 40, 480, 1.5)],
         tx: { kk: '15 de agosto de 2024', h: 'Binomio presidencial', b: 'Construye la proclamó compañera de fórmula de *Henry Cucalón*, exministro de Gobierno.' } },
@@ -375,14 +377,14 @@
   /* ===================== LINDA ROMERO · quito|8 ===================== */
   {
     const s = 'romero';
-    B('quito|8|origen', 'r1', CH1, ['p23', 'eu', 'ecs', 'tam', 'hv', 'pri'], [
+    B('quito|8|origen', 'r1', CH1, ['p23', 'eu', 'ecs', 'tam', 'hv', 'sen', 'ctr'], [
       { ch: 'a', fu: ['p23', 'eu'], m: [foto(F(s) + 'foto.webp', 60, -20, 540, -2)],
         tx: { kk: K1, h: 'La comunicadora', b: 'Linda Diana *Romero Espinoza*. Nació en Cuenca; es comunicadora social y consultora política.' } },
       { ch: 'a', fu: ['ecs', 'eu'], m: [card('Producción y dirección de televisión', 'Consultoría en comunicación política · conferencias', 0, 40, 520, 1.5)],
         tx: { h: 'Detrás de cámaras', b: 'Ha sido *productora y directora* de televisión, conferencista y consultora en comunicación política.' } },
       { ch: 'a', fu: ['tam', 'ecs'], m: [card('Mujeres Reales', 'Fundación', 0, 40, 420, -2)],
         tx: { h: 'Mujeres Reales', b: 'Preside esta *fundación* dedicada a mujeres.' } },
-      { ch: 'a', fu: ['hv', 'pri'], m: [card('Hoja de vida inscrita en el CNE', 'Formación: no registra · Cargos públicos: no registra', 0, 40, 520, 1.5, { fx: 'hv' })],
+      { ch: 'a', fu: ['hv', 'sen', 'ctr'], m: [card('Hoja de vida inscrita en el CNE', 'Formación: no registra · Cargos públicos: no registra', 0, 40, 520, 1.5, { fx: 'hv' })],
         tx: { h: 'Lo que registra el CNE', b: 'Su hoja de vida inscrita no registra *títulos académicos* ni cargos públicos previos.' } }
     ]);
     B('quito|8|tray', 'r2', CH2, ['t23', 'p23', 'pan'], [

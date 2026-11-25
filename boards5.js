@@ -23,6 +23,8 @@
 
   const G = {
     hv: ['Hoja de vida inscrita en el CNE (registros públicos de candidaturas)', ''],
+    cne: ['CNE · candidaturas calificadas para las seccionales 2026', 'https://www.cne.gob.ec/'],
+    tce: ['Tribunal Contencioso Electoral · sentencias y resoluciones publicadas', 'https://www.tce.gob.ec/'],
     cr930: ['Diario Crónica · «Loja define sus cartas: 504 listas van a las urnas y cuatro quedan fuera» (30 de septiembre de 2026)', 'https://cronica.com.ec/2026/09/30/loja-define-sus-cartas-504-listas-van-a-las-urnas-y-cuatro-quedan-fuera/'],
     cr1104: ['Diario Crónica · «Cara a cara por Loja: candidatos a la Prefectura y Alcaldía medirán sus propuestas» (4 de noviembre de 2026)', 'https://cronica.com.ec/2026/11/04/cara-a-cara-por-loja-candidatos-a-la-prefectura-y-alcaldia-mediran-sus-propuestas-en-los-debates-obligatorios-del-cne/'],
     cr1104b: ['Diario Crónica · «Loja exige soluciones, no promesas: ocho candidatos bajo la presión ciudadana» (4 de noviembre de 2026)', 'https://cronica.com.ec/2026/11/04/loja-exige-soluciones-no-promesas-ocho-candidatos-bajo-la-presion-ciudadana/'],
@@ -40,7 +42,6 @@
     crq: ['Diario Crónica · «Franco Quezada va por la “revancha” y presenta 10 ejes» (31 de agosto de 2026)', 'https://cronica.com.ec/2026/08/31/franco-quezada-va-por-la-revancha-y-presenta-10-ejes-para-volver-a-la-alcaldia-de-loja/'],
     tqz: ['Teleamazonas · «Concejo Municipal de Loja aprueba la remoción del alcalde Franco Quezada» (26 de junio de 2025)', 'https://www.teleamazonas.com/actualidad/noticias/politica/alcalde-franco-quezada-removido-loja-concejo-municipal-97810/'],
     prq: ['Primicias · «Esto se sabe de la remoción del cargo del alcalde de Loja, Franco Quezada» (26 de junio de 2025)', 'https://www.primicias.ec/politica/alcalde-loja-franco-quezada-remocion-cargo-concejo-cantonal-99424/'],
-    ptce: ['Primicias · «Remoción del alcalde de Loja, Franco Quezada, queda ratificada tras resolución del TCE» (18 de julio de 2025)', 'https://www.primicias.ec/politica/remocion-cargo-alcalde-loja-franco-quezada-tce-contencioso-100994/'],
     /* Picoita */
     lhp: ['La Hora · «Conozca quién es Patricia Picoita, nueva alcaldesa de Loja» (marzo de 2022)', 'https://www.lahora.com.ec/loja/cuatro-mujeres-asumieron-alcaldia/'],
     ecv: ['Ecuavisa · «Elecciones seccionales: estos son los candidatos a las alcaldías de las principales ciudades de la Sierra» (18 de noviembre de 2026)', 'https://www.ecuavisa.com/la-noticia-a-fondo/elecciones-seccionales-estos-son-los-candidatos-a-las-alcaldias-de-las-principales-ciudades-de-la-sierra-20261118-0002.html'],
@@ -159,8 +160,8 @@
       { ch: 'a', fu: ['eor', 'etr'], m: [card('CNE · revocatoria del mandato', 'Loja, 24 de junio de 2018 · Sí: 70,40 %', 0, 40, 520, -1.5, { fx: 'hv' })],
         tx: { h: 'Revocado', b: 'Los votantes le retiraron el mandato. Él sostuvo que era un «libreto *preestablecido*».' } }
     ]);
-    B('loja|3|exp', 'j33', CH3, ['pdc', 'cr819', 'cr25', 'ecv', 'hv'], [
-      { ch: 'a', fu: ['pdc', 'cr819'], m: [foto(Dc(s) + 'sonrisa.webp', 140, -50, 400, -1.5)], ty: 500,
+    B('loja|3|exp', 'j33', CH3, ['cr819', 'cr25', 'ecv', 'hv', 'cne'], [
+      { ch: 'a', fu: ['cr819', 'cne'], m: [foto(Dc(s) + 'sonrisa.webp', 140, -50, 400, -1.5)], ty: 500,
         tx: { kk: K3, h: 'Listas 1 y 61', b: 'Llega por *Orgullosamente Lojanos*: ARE y Centro Democrático.' } },
       { ch: 'a', fu: ['cr25'], ty: 380, m: [wd('Varios intentos', 120, -2)],
         tx: { b: 'La prensa local registra que ha perdido *varios procesos* consecutivos para alcalde y asambleísta.' }, n: 'Varios intentos. La prensa local registra que ha perdido varios procesos consecutivos para alcalde y asambleísta.' },
@@ -207,14 +208,14 @@
       { ch: 'a', fu: ['hv'], m: [card('Municipio de Loja', 'Profesor municipal · docente', 0, 40, 460, 1.5)],
         tx: { h: 'Antes de la Alcaldía', b: 'Trabajó como *profesor* en el propio Municipio de Loja.' } }
     ]);
-    B('loja|5|tray', 'j52', CH2, ['tqz', 'prq', 'ptce'], [
+    B('loja|5|tray', 'j52', CH2, ['tqz', 'prq', 'tce'], [
       { ch: 'a', fu: ['tqz'], ty: 380, m: [dt('2023', 280)],
         tx: { kk: K2, h: 'Alcalde', b: 'Asumió la Alcaldía de Loja en *mayo*.' }, n: 'Capítulo 2. Dos mil veintitrés: asumió la Alcaldía de Loja en mayo.' },
       { ch: 'a', fu: ['prq'], m: [card('Concejo Municipal de Loja', 'Remoción · 26 de junio de 2025 · 9 votos de 11', 0, 40, 540, -1.5, { fx: 'hv' })],
         tx: { h: 'Removido', b: 'Según la comisión, incumplió una resolución de *transparencia* presupuestaria y una transferencia para una celda de residuos vulneró el Cootad.' } },
       { ch: 'a', fu: ['prq'], m: [foto(Dc(s) + 'g2.webp', 60, 0, 540, 1.5)],
         tx: { h: 'Su respuesta', b: '«Yo no respondo ante un *show político*», dijo, y apeló.' } },
-      { ch: 'a', fu: ['ptce'], ty: 380, m: [dt('18.07.2025', 165)],
+      { ch: 'a', fu: ['tce'], ty: 380, m: [dt('18.07.2025', 165)],
         tx: { h: 'Ratificado', b: 'El Tribunal Contencioso Electoral confirmó la remoción: el Concejo respetó el *debido proceso*.' }, n: 'Dieciocho de julio de 2025. Ratificado: el Tribunal Contencioso Electoral confirmó la remoción.' }
     ]);
     B('loja|5|exp', 'j53', CH3, ['crq', 'hv'], [

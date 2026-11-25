@@ -58,7 +58,7 @@ window.BOARDS = window.BOARDS || {};
     prc: ['Primicias · polémica por las fiestas de Quito: Correa defiende a Muñoz y cuestiona a Merino', 'https://www.primicias.ec/quito/contratos-fiestas-quito-municipio-sercop-pabel-munoz-rafael-correa-wilson-merino-110189/'],
     pgu: ['Primicias · entrevista a María Fernanda Guillén, concejala que se principalizó tras la renuncia de Merino', 'https://www.primicias.ec/quito/maria-fernanda-guillen-reemplazo-pabel-munoz-municipio-fiestas-trabajo-136604/'],
     ere: ['Expreso · «Así queda el Concejo de Quito: diez ediles buscan la reelección»', 'https://www.expreso.ec/quito/asi-queda-concejo-quito-diez-ediles-buscan-reeleccion-alcaldia-292986.html'],
-    pim: ['Primicias · movimientos locales vigentes en Pichincha; Imparables, reconocido por el CNE en 2025 (1 de abril de 2026)', 'https://www.primicias.ec/politica/elecciones-seccionales-candidato-alcalde-movimientos-partidos-politicos-cne-119385/'],
+    cnem: ['CNE · registro de organizaciones políticas (Imparables, movimiento provincial reconocido en 2025)', 'https://www.cne.gob.ec/'],
     eui: ['El Universo · «Diez precandidatos inscritos para la Alcaldía de Quito» (agosto de 2026)', 'https://www.eluniverso.com/noticias/politica/diez-precandidatos-inscritos-para-alcaldia-quito-nota/'],
     plan: ['Plan de trabajo «Ciudad Imparable», inscrito en el CNE (portada)', ''],
     cons: ['Consulta a registros públicos: antecedentes penales, obligaciones tributarias en firme (SRI) y pensiones alimenticias. Corte: 24 de noviembre de 2026', '']
@@ -137,7 +137,7 @@ window.BOARDS = window.BOARDS || {};
   window.BOARDS['quito|6|exp'] = make('me',
     1,
     [{ id: 'a', t: 'Camino a la lista 79', k: 'Apertura' }, { id: 'b', t: 'El quiebre', k: '2023–2026' }, { id: 'c', t: 'Imparables', k: '2025–2026' }, { id: 'd', t: 'Registros públicos', k: 'Consulta' }],
-    SRC(['cv', 'prc', 'eal', 'tgw', 'pim', 'tel', 'eof', 'pgu', 'ere', 'eui', 'plan', 'cons']),
+    SRC(['cv', 'prc', 'eal', 'tgw', 'cnem', 'tel', 'eof', 'pgu', 'ere', 'eui', 'plan', 'cons']),
     [
       { ch: 'a', x: 0, y: 0, fu: [],
         m: [foto(D + 'debate.webp', 60, -20, 540, -1.5)],
@@ -149,7 +149,7 @@ window.BOARDS = window.BOARDS || {};
         m: [{ t: 'wd', v: 'Independiente', x: 40, y: 150, fs: 118, r: -3 }],
         ty: 360,
         tx: { h: 'El quiebre', b: 'Se separó del bloque y se volvió uno de los críticos más visibles de Muñoz. El debate del presupuesto 2026 terminó en *gritos* entre ambos.' } },
-      { ch: 'c', x: 3150, y: 180, fu: ['pim', 'eui'],
+      { ch: 'c', x: 3150, y: 180, fu: ['cnem', 'eui'],
         m: [card('Movimiento Imparables', 'Movimiento político provincial · lista 79', 0, 40, 520, -1.5)],
         tx: { kk: '2025', h: 'Un movimiento propio', b: 'El CNE reconoció a Imparables, del que Merino es *promotor*. Es uno de cuatro movimientos provinciales vigentes en Pichincha.' } },
       { ch: 'c', x: 4200, y: -40, fu: ['tel', 'eof', 'eal'],

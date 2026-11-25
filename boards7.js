@@ -26,6 +26,8 @@
 
   const G = {
     hv: ['Hoja de vida inscrita en el CNE (registros públicos de candidaturas)', ''],
+    tce: ['Tribunal Contencioso Electoral · sentencias y resoluciones publicadas', 'https://www.tce.gob.ec/'],
+    satje: ['Consejo de la Judicatura · consulta de procesos judiciales (e-SATJE)', 'https://procesosjudiciales.funcionjudicial.gob.ec/'],
     lpc: ['La Prensa (Riobamba) · «Estos serían los candidatos a alcalde de Riobamba en 2027» (21 de octubre de 2026; listado de calificación de la Delegación Electoral de Chimborazo)', 'https://laprensa.com.ec/candidatos-a-alcalde-de-riobamba-en-2027/'],
     lpd: ['La Prensa (Riobamba) · cobertura del debate por la Alcaldía de Riobamba (13 de noviembre de 2026)', 'https://laprensa.com.ec/debate-de-candidatos-a-alcaldes-de-riobamba/'],
     ecq: ['Ecuador Chequea · «Debate por la Alcaldía de Riobamba: verificamos 14 afirmaciones de los nueve candidatos» (16 de noviembre de 2026)', 'https://ecuadorchequea.com/debate-alcaldia-riobamba-afirmaciones-verificadas/'],
@@ -39,8 +41,6 @@
     gac: ['GAD Municipal de Riobamba · Gaceta Municipal 2022, administración 2019–2023 (integrantes del Concejo)', 'https://gadmriobamba.gob.ec/images/Gaceta%20Municipal/Gaceta%202022.pdf'],
     /* Vinueza */
     vis: ['Vistazo · «Caso Altares: Fiscalía vincula al alcalde de Riobamba, John Vinueza…» (20 de abril de 2025)', 'https://www.vistazo.com/actualidad/nacional/2025-04-20-fiscalia-vincula-alcalde-riobamba-instruccion-fiscal-presunta-asociacion-ilicita-AK9185662'],
-    ptce: ['Primicias · «TCE anula proceso de destitución contra John Vinueza, alcalde de Riobamba» (febrero de 2025)', 'https://primicias.ec/politica/tce-anula-destitucion-john-vinueza-alcalde-riobamba-90516'],
-    pjui: ['Primicias · «¿Qué se investiga en el caso Altares? Alcalde de Riobamba y dos concejales son llamados a juicio» (29 de abril de 2026)', 'https://www.primicias.ec/politica/caso-altares-juicio-alcalde-riobamba-john-vinueza-investigacion-asociacion-ilicita-cupos-taxis-121634/'],
     exj: ['Expreso · «Alcalde de Riobamba, concejales y exfuncionario irán a juicio por presunta asociación ilícita» (abril de 2026)', 'https://www.expreso.ec/ecuador/alcalde-riobamba-concejales-exfuncionario-iran-juicio-presunta-asociacion-ilicita-280373.html'],
     tel: ['El Telégrafo · «Alcalde de Riobamba fue declarado inocente» (27 de octubre de 2026)', 'https://www.eltelegrafo.com.ec/noticias/nacionales/210/caso-antares-alcalde-riobamba-declarado-inocente'],
     dlai: ['Diario Los Andes · «Jueces ratifican la inocencia del alcalde de Riobamba en el caso Altares» (26 de octubre de 2026)', 'https://diariolosandes.com.ec/jueces-ratifican-la-inocencia-del-alcalde-de-riobamba-en-el-caso-altares/']
@@ -262,14 +262,14 @@
       { ch: 'a', fu: ['hv', 'vis'], m: [card('Italia', 'Máster en recalificación de asentamientos para la cooperación', 0, 40, 520, 1.5)],
         tx: { h: 'La ciudad como oficio', b: 'Sumó un máster en Italia y fue *docente* universitario.' } }
     ]);
-    B('riobamba|8|tray', 'r82', CH2, ['hv', 'vis', 'ptce', 'pjui', 'exj', 'tel', 'dlai'], [
+    B('riobamba|8|tray', 'r82', CH2, ['hv', 'vis', 'tce', 'exj', 'tel', 'dlai', 'satje'], [
       { ch: 'a', fu: ['hv'], ty: 380, m: [dt('2021–2023', 150)],
         tx: { kk: K2, h: 'Asambleísta', b: 'Luego ganó la *Alcaldía* de Riobamba, que ejerce desde 2023.' }, n: 'Capítulo 2. De 2021 a 2023, asambleísta. Luego ganó la Alcaldía de Riobamba, que ejerce desde 2023.' },
-      { ch: 'a', fu: ['ptce'], m: [foto(Dc(s) + 'concejo.webp', 60, 0, 540, 1.5)],
+      { ch: 'a', fu: ['tce'], m: [foto(Dc(s) + 'concejo.webp', 60, 0, 540, 1.5)],
         tx: { h: 'Un Concejo dividido', b: 'Parte del Concejo aprobó su remoción por la donación de un terreno; el TCE *anuló* el proceso.' } },
-      { ch: 'a', fu: ['vis', 'pjui', 'exj'], m: [card('Caso Altares', '2025: vinculado · 2026: llamado a juicio por presunta asociación ilícita', 0, 40, 560, -1.5, { fx: 'hv' })],
+      { ch: 'a', fu: ['vis', 'exj', 'satje'], m: [card('Caso Altares', '2025: vinculado · 2026: llamado a juicio por presunta asociación ilícita', 0, 40, 560, -1.5, { fx: 'hv' })],
         tx: { h: 'Un proceso penal', b: 'La Fiscalía investigó cupos de taxis rurales y trámites municipales. Él rechazó las acusaciones y dijo que seguiría su *defensa*.' } },
-      { ch: 'a', fu: ['tel', 'dlai'], ty: 380, m: [wd('Inocente', 150, -2)],
+      { ch: 'a', fu: ['tel', 'dlai', 'satje'], ty: 380, m: [wd('Inocente', 150, -2)],
         tx: { b: 'El 26 de octubre de 2026, un tribunal ratificó su inocencia en *primera instancia*: la Fiscalía no probó la acusación.' }, n: 'Inocente. El 26 de octubre de 2026, un tribunal ratificó su inocencia en primera instancia: la Fiscalía no probó la acusación.' }
     ]);
     B('riobamba|8|exp', 'r83', CH3, ['lpc', 'dla', 'lpd', 'ecq', 'hv'], [
