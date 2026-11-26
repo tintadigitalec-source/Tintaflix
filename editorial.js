@@ -711,5 +711,61 @@ window.ED = {
       tray: { t: "Teniente política", k: "¿Qué ha hecho?", d: "Su único cargo registrado y lo que no consta." },
       exp: { t: "Lista 7", k: "¿Cómo llega a esta candidatura?", d: "ADN y un centro de faenamiento. Al final, los registros públicos." }
     }
+  },
+  "manta|0": {
+    syn: "Jorge Cevallos es arquitecto y magíster en Gestión Ambiental. Fue presidente del Congreso Nacional, el último antes de la Asamblea, y concejal de Manta. Llega con las listas 20-4, Por la Razón.",
+    eps: {
+      origen: { t: "El arquitecto", k: "¿Quién es antes de la política?", d: "Arquitectura, gestión ambiental y docencia." },
+      tray: { t: "Congreso Nacional", k: "¿Qué ha hecho?", d: "La presidencia del Congreso y lo que no consta." },
+      exp: { t: "Listas 20-4", k: "¿Cómo llega a esta candidatura?", d: "Su alianza y un plan publicado como imagen. Al final, los registros públicos." }
+    }
+  },
+  "manta|1": {
+    syn: "Jaime Estrada Bonilla es ingeniero comercial y fue alcalde de Manta entre 2009 y 2014. Está detenido en Panamá desde noviembre por un pedido de extradición de Estados Unidos, que lo acusa de narcotráfico; su movimiento rechazó la detención. Sigue en la papeleta con las listas 72-111.",
+    eps: {
+      origen: { t: "El ingeniero", k: "¿Quién es antes de la política?", d: "Ingeniería comercial y lo que no consta." },
+      tray: { t: "Alcalde 2009–2014", k: "¿Qué ha hecho?", d: "Su alcaldía, la acusación de EE. UU. y la etapa del proceso." },
+      exp: { t: "Listas 72-111", k: "¿Cómo llega a esta candidatura?", d: "Una candidatura desde la detención y su plan vial. Al final, los registros públicos." }
+    }
+  },
+  "manta|2": {
+    syn: "Fernando Pico fue concejal de Manta entre 2014 y 2019. No registra títulos universitarios. Llega con las listas 1-8-61-63, Somos Manabas, y propone «Agua Manta 24/7».",
+    eps: {
+      origen: { t: "Sin títulos registrados", k: "¿Quién es antes de la política?", d: "Lo que consta en el registro." },
+      tray: { t: "Concejal", k: "¿Qué ha hecho?", d: "El Concejo y una afirmación verificada del debate." },
+      exp: { t: "Listas 1-8-61-63", k: "¿Cómo llega a esta candidatura?", d: "Somos Manabas y el agua 24/7. Al final, los registros públicos." }
+    }
+  },
+  "manta|3": {
+    syn: "Hernán Salcedo es ingeniero comercial, magíster y docente universitario. Fue concejal de Manta en la administración de Agustín Intriago. En las primarias lo escogió Caminantes; se inscribió por ADN, lista 7.",
+    eps: {
+      origen: { t: "El ingeniero comercial", k: "¿Quién es antes de la política?", d: "Administración y docencia." },
+      tray: { t: "Concejal", k: "¿Qué ha hecho?", d: "El Concejo y dos afirmaciones verificadas del debate." },
+      exp: { t: "Lista 7", k: "¿Cómo llega a esta candidatura?", d: "Su paso a ADN y la meta de horas de agua. Al final, los registros públicos." }
+    }
+  },
+  "manta|4": {
+    syn: "Josué Suárez no registra títulos universitarios ni cargos públicos. Llega con la lista 62, Movimiento Caminantes, y propone una primera fase de desalinización para la parte alta.",
+    eps: {
+      origen: { t: "Sin títulos registrados", k: "¿Quién es antes de la política?", d: "Lo que consta en el registro." },
+      tray: { t: "Sin cargos públicos", k: "¿Qué ha hecho?", d: "Su hoja de vida y una afirmación verificada del debate." },
+      exp: { t: "Lista 62", k: "¿Cómo llega a esta candidatura?", d: "Caminantes y el agua desalinizada. Al final, los registros públicos." }
+    }
+  },
+  "manta|5": {
+    syn: "Marciana Valdivieso es ingeniera comercial y magíster en Administración Pública. Asumió la Alcaldía en 2023 tras el asesinato de Agustín Intriago y hoy está con licencia para hacer campaña. Es la única mujer en la papeleta, con la lista 107, Mejor Ciudad.",
+    eps: {
+      origen: { t: "La ingeniera comercial", k: "¿Quién es antes de la política?", d: "Administración pública." },
+      tray: { t: "Alcaldesa", k: "¿Qué ha hecho?", d: "Cómo llegó a la Alcaldía, la licencia y una afirmación verificada." },
+      exp: { t: "Lista 107", k: "¿Cómo llega a esta candidatura?", d: "Mejor Ciudad y la seguridad en su plan. Al final, los registros públicos." }
+    }
+  },
+  "manta|6": {
+    syn: "Bosco Vera es licenciado en Comunicación y magíster en Ciencia Política. Fue concejal y subdirector de Gestión Patrimonial del Municipio de Manta. Llega con las listas 2-17, Por el Común.",
+    eps: {
+      origen: { t: "El comunicador", k: "¿Quién es antes de la política?", d: "Comunicación y ciencia política." },
+      tray: { t: "En el Municipio", k: "¿Qué ha hecho?", d: "El Concejo, la administración y una afirmación verificada." },
+      exp: { t: "Listas 2-17", k: "¿Cómo llega a esta candidatura?", d: "Por el Común y el agua que se pierde. Al final, los registros públicos." }
+    }
   }
 };

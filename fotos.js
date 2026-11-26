@@ -40,3 +40,5 @@ Object.assign(window.FOTOS, { 'zamora|0': 'balladares', 'zamora|1': 'cabrera', '
 Object.assign(window.CIUDAD_FOTOS_COLOR, { zamora: 'fotos/zamora-ciudad-1-color.webp' });
 Object.assign(window.FOTOS, { 'galapagos|0': 'andrade', 'galapagos|2': 'freire', 'galapagos|3': 'ochoa' });
 Object.assign(window.CIUDAD_FOTOS_COLOR, { galapagos: 'fotos/galapagos-ciudad-1-color.webp' });
+Object.assign(window.FOTOS, { 'manta|0': 'cevallos', 'manta|1': 'estrada', 'manta|2': 'pico', 'manta|3': 'salcedo', 'manta|4': 'suarez', 'manta|5': 'valdivieso', 'manta|6': 'vera' });
+Object.assign(window.CIUDAD_FOTOS_COLOR, { manta: 'fotos/manta-ciudad-1-color.webp' });

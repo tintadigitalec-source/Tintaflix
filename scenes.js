@@ -43,6 +43,10 @@ zamora:()=>sky('#0d4a3c','#9ad6b8','z')+rays('#dfffe8',50,32)+sun(74,22,7,'#fff8
  +`<g fill="#145c3a"><path d="M0 100 L0 76 Q12 62 24 76 Q36 60 48 76 Q60 62 72 76 Q84 60 100 78 L100 100z"/></g>`
  +`<g transform="translate(50 50)"><circle cx="0" cy="0" r="12" fill="#f5e9c8" stroke="#8b5e34" stroke-width="2.5"/><path d="M0 0 L0 -8 M0 0 L5 3" stroke="#8b5e34" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="0" r="1.5" fill="#8b5e34"/></g>`
  +`<path d="M0 100 Q50 88 100 100z" fill="#2a8fb0" opacity=".8"/>`,
+manta:()=>sky('#0b5f8f','#a8e2f5','ma')+rays('#fff',50,32)+sun(76,22,8,'#fff8c8')+cloud(26,20,.8)
+ +`<path d="M0 100 L0 70 L100 70 L100 100z" fill="#1592c4"/><path d="M0 100 L0 86 L100 86 L100 100z" fill="#0b5f8f"/>`
+ +`<g fill="#e9eef2"><rect x="8" y="48" width="7" height="22"/><rect x="17" y="40" width="8" height="30"/><rect x="27" y="52" width="6" height="18"/><rect x="66" y="44" width="8" height="26"/><rect x="76" y="50" width="7" height="20"/></g>`
+ +`<g transform="translate(46 74)"><path d="M-10 0 L10 0 L7 5 L-7 5z" fill="#fff"/><path d="M0 0 L0 -12 L8 -2z" fill="#f5c542"/></g>`,
 galapagos:()=>sky('#0f6aa8','#9fe0ff','ga')+rays('#fff',50,30)+sun(28,24,8,'#fff8c8')+cloud(70,22,.9)
  +`<path d="M0 100 L0 64 L100 64 L100 100z" fill="#1b9bd1"/><path d="M0 100 L0 82 L100 82 L100 100z" fill="#0f6aa8"/>`
  +`<g transform="translate(52 66)"><ellipse cx="0" cy="6" rx="26" ry="6" fill="#d9c58a"/><ellipse cx="2" cy="-6" rx="18" ry="11" fill="#5a6b3a"/><path d="M-16 -4 Q0 -22 18 -4" fill="#7f9a4e"/><path d="M-6 -10 L-2 -16 L4 -10z M4 -8 L8 -14 L12 -8z" fill="#5a6b3a"/><ellipse cx="22" cy="0" rx="6" ry="4" fill="#9db36b"/><circle cx="24" cy="-1" r="1" fill="#222"/><rect x="-14" y="2" width="5" height="6" rx="2" fill="#7f9a4e"/><rect x="8" y="2" width="5" height="6" rx="2" fill="#7f9a4e"/></g>`
