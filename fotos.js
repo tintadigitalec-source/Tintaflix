@@ -32,3 +32,5 @@ Object.assign(window.FOTOS, { 'riobamba|0': 'abarca', 'riobamba|1': 'aldas', 'ri
 Object.assign(window.CIUDAD_FOTOS_COLOR, { riobamba: 'fotos/riobamba-ciudad-1-color.webp' });
 Object.assign(window.FOTOS, { 'ibarra|0': 'arias', 'ibarra|1': 'cabezas', 'ibarra|2': 'castillo', 'ibarra|3': 'moncayo', 'ibarra|4': 'posso' });
 Object.assign(window.CIUDAD_FOTOS_COLOR, { ibarra: 'fotos/ibarra-ciudad-1-color.webp' });
+Object.assign(window.FOTOS, { 'ambato|0': 'altamirano', 'ambato|1': 'amoroso', 'ambato|2': 'caiza', 'ambato|3': 'lopez', 'ambato|4': 'naranjo', 'ambato|5': 'robayo', 'ambato|6': 'salazar', 'ambato|7': 'zuniga' });
+Object.assign(window.CIUDAD_FOTOS_COLOR, { ambato: 'fotos/ambato-ciudad-2-color.webp' });

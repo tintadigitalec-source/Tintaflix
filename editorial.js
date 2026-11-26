@@ -511,5 +511,69 @@ window.ED = {
       tray: { t: "Concejala y asambleísta", k: "¿Qué ha hecho?", d: "El Concejo de Ibarra, la Asamblea y un doble pago investigado en 2019, con su respuesta." },
       exp: { t: "Lista 62", k: "¿Cómo llega a esta candidatura?", d: "Somos Libres, la única candidata y sus obras para el río. Al final, los registros públicos." }
     }
+  },
+  "ambato|0": {
+    syn: "Javier Altamirano es abogado y magíster en Derecho Procesal. Fue concejal de Ambato en 2004 y alcalde entre 2019 y 2023. Llega con la lista 1-6-63, Fuerza Democrática Solidaria.",
+    eps: {
+      origen: { t: "El abogado", k: "¿Quién es antes de la política?", d: "Derecho, docencia universitaria y el Registro de la Propiedad." },
+      tray: { t: "Alcalde", k: "¿Qué ha hecho?", d: "El Concejo, la Alcaldía, el plan de uso del suelo y una frase verificada del debate." },
+      exp: { t: "Lista 1-6-63", k: "¿Cómo llega a esta candidatura?", d: "Su alianza, el agua y las vías. Al final, los registros públicos." }
+    }
+  },
+  "ambato|1": {
+    syn: "Luis Amoroso es ingeniero civil y magíster en Vías Terrestres. Fue rector de la Universidad Técnica de Ambato y alcalde entre 2014 y 2019. Llega con la lista 62, Movimiento Cívico por Ambato y Tungurahua.",
+    eps: {
+      origen: { t: "El ingeniero", k: "¿Quién es antes de la política?", d: "Obras públicas en cuatro cantones y la Universidad Técnica de Ambato." },
+      tray: { t: "Alcalde", k: "¿Qué ha hecho?", d: "Cinco años en el Municipio, el contrato de fotorradares con su respuesta y una frase verificada." },
+      exp: { t: "Lista 62", k: "¿Cómo llega a esta candidatura?", d: "El resultado de 2023, su movimiento y el río Ambato. Al final, los registros públicos." }
+    }
+  },
+  "ambato|2": {
+    syn: "Diana Caiza es ingeniera comercial, del pueblo Chibuleo. Fue concejala y vicealcaldesa, y desde 2023 es la primera mujer indígena en la Alcaldía de Ambato. Busca la reelección con Pachakutik, lista 18.",
+    eps: {
+      origen: { t: "La ingeniera", k: "¿Quién es antes de la política?", d: "Economía social y solidaria y el pueblo Chibuleo." },
+      tray: { t: "Vicealcaldesa y alcaldesa", k: "¿Qué ha hecho?", d: "El Concejo, la victoria de 2023, una denuncia archivada y una frase verificada." },
+      exp: { t: "Lista 18", k: "¿Cómo llega a esta candidatura?", d: "La reelección, el agua y sus metas. Al final, los registros públicos." }
+    }
+  },
+  "ambato|3": {
+    syn: "Juan Carlos López es ingeniero en Gestión Ambiental y empresario del sector de granos. No ha ocupado cargos de elección. Llega con la lista 21, Creo.",
+    eps: {
+      origen: { t: "El empresario", k: "¿Quién es antes de la política?", d: "Gestión ambiental, negocios y una importadora." },
+      tray: { t: "Desde lo privado", k: "¿Qué ha hecho?", d: "Un cargo público en 2014, su primera candidatura y una frase verificada." },
+      exp: { t: "Lista 21", k: "¿Cómo llega a esta candidatura?", d: "Agroindustria y un presupuesto para infraestructura. Al final, los registros públicos." }
+    }
+  },
+  "ambato|4": {
+    syn: "Lisette Naranjo es técnica superior en Industrialización de Productos Agrícolas. Dirigió el Comité de la Fiesta de la Fruta y de las Flores entre 2016 y 2019. Llega con la lista 7, ADN.",
+    eps: {
+      origen: { t: "La gerente", k: "¿Quién es antes de la política?", d: "Empresa privada y una cooperativa de ahorro y crédito." },
+      tray: { t: "La fiesta", k: "¿Qué ha hecho?", d: "La Fiesta de la Fruta y de las Flores y una frase verificada del debate." },
+      exp: { t: "Lista 7", k: "¿Cómo llega a esta candidatura?", d: "ADN, cuatro ejes y El Socavón. Al final, los registros públicos." }
+    }
+  },
+  "ambato|5": {
+    syn: "Mario Robayo es abogado. Fue concejal rural de Ambato entre 2009 y 2014 y teniente político de Huachi Grande. Llega con la lista 61, Tiempo de Cambio.",
+    eps: {
+      origen: { t: "El abogado", k: "¿Quién es antes de la política?", d: "Crédito, cobranzas y la Pastoral Social." },
+      tray: { t: "Concejal rural", k: "¿Qué ha hecho?", d: "El Concejo, la Gobernación y una frase verificada del debate." },
+      exp: { t: "Lista 61", k: "¿Cómo llega a esta candidatura?", d: "Un centro histórico peatonal y buses. Al final, los registros públicos." }
+    }
+  },
+  "ambato|6": {
+    syn: "Evelyn Salazar estudia terapia de lenguaje y lengua de señas. Viene de la educación inicial, el comercio y el sector artístico; no registra cargos públicos. Llega con la lista 4, Pueblo, Igualdad y Democracia.",
+    eps: {
+      origen: { t: "La docente", k: "¿Quién es antes de la política?", d: "Educación inicial, comercio y escenarios." },
+      tray: { t: "Sin cargos públicos", k: "¿Qué ha hecho?", d: "Su primera candidatura y dos frases verificadas del debate." },
+      exp: { t: "Lista 4", k: "¿Cómo llega a esta candidatura?", d: "Una ciudad limpia y su plan de agua. Al final, los registros públicos." }
+    }
+  },
+  "ambato|7": {
+    syn: "Cristian Zúñiga es ingeniero en Electrónica y magíster en Auditoría de Sistemas Tecnológicos. Pasó por el Municipio de Ambato y Petroecuador. Llega con la lista 8, Avanza.",
+    eps: {
+      origen: { t: "El ingeniero", k: "¿Quién es antes de la política?", d: "Sistemas, auditoría y una empresa de tecnología." },
+      tray: { t: "En el Estado", k: "¿Qué ha hecho?", d: "El Municipio, otras entidades públicas y Petroecuador." },
+      exp: { t: "Lista 8", k: "¿Cómo llega a esta candidatura?", d: "Avanza, participación ciudadana y espacios públicos. Al final, los registros públicos." }
+    }
   }
 };
