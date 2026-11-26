@@ -575,5 +575,77 @@ window.ED = {
       tray: { t: "En el Estado", k: "¿Qué ha hecho?", d: "El Municipio, otras entidades públicas y Petroecuador." },
       exp: { t: "Lista 8", k: "¿Cómo llega a esta candidatura?", d: "Avanza, participación ciudadana y espacios públicos. Al final, los registros públicos." }
     }
+  },
+  "latacunga|0": {
+    syn: "Geovanny Cóndor es ingeniero agroindustrial y magíster en Administración Pública. Trabajó en el Municipio de Latacunga, donde fue director de Agua Potable, y en el riego de la Prefectura. Llega con la lista 3, Sociedad Patriótica.",
+    eps: {
+      origen: { t: "El ingeniero", k: "¿Quién es antes de la política?", d: "Agroindustria, administración pública y el riego de la provincia." },
+      tray: { t: "Técnico municipal", k: "¿Qué ha hecho?", d: "Puestos técnicos en el Municipio, el agua potable y una frase verificada del debate." },
+      exp: { t: "Lista 3", k: "¿Cómo llega a esta candidatura?", d: "Sociedad Patriótica y un plan maestro de agua. Al final, los registros públicos." }
+    }
+  },
+  "latacunga|1": {
+    syn: "Rodrigo Espín es arquitecto y magíster en Gerencia de Resultados. Fue alcalde de Latacunga hasta 2014 y director provincial de Alianza PAIS. Llega con las listas 18-62, Campo y Ciudad, Una Sola Fuerza.",
+    eps: {
+      origen: { t: "El arquitecto", k: "¿Quién es antes de la política?", d: "Arquitectura, gerencia y una hoja de vida sin cargos detallados." },
+      tray: { t: "Alcalde", k: "¿Qué ha hecho?", d: "El Municipio, Alianza PAIS y una frase verificada del debate." },
+      exp: { t: "Listas 18-62", k: "¿Cómo llega a esta candidatura?", d: "Su alianza y los comités de seguridad. Al final, los registros públicos." }
+    }
+  },
+  "latacunga|2": {
+    syn: "Vicente Guamán es doctor en Jurisprudencia y abogado. Su hoja de vida no registra cargos públicos. Llega con la lista 7, ADN.",
+    eps: {
+      origen: { t: "El abogado", k: "¿Quién es antes de la política?", d: "Jurisprudencia y lo que no consta de su trayectoria." },
+      tray: { t: "Sin cargos públicos", k: "¿Qué ha hecho?", d: "Su hoja de vida y una frase verificada del debate." },
+      exp: { t: "Lista 7", k: "¿Cómo llega a esta candidatura?", d: "ADN, el río Cutuchi y la alerta temprana. Al final, los registros públicos." }
+    }
+  },
+  "latacunga|3": {
+    syn: "José Iturralde es tecnólogo en Mercadotecnia. Su hoja de vida no registra cargos públicos. Llega con la lista 6, Partido Social Cristiano.",
+    eps: {
+      origen: { t: "El publicista", k: "¿Quién es antes de la política?", d: "Mercadotecnia, marketing y lo que no consta." },
+      tray: { t: "Sin cargos públicos", k: "¿Qué ha hecho?", d: "Su hoja de vida y una frase verificada del debate." },
+      exp: { t: "Lista 6", k: "¿Cómo llega a esta candidatura?", d: "El PSC y su plan de agua. Al final, los registros públicos." }
+    }
+  },
+  "latacunga|4": {
+    syn: "Sherlin Pacheco es abogada y máster en Propiedad Intelectual. Fue asambleísta alterna y analista de contratación pública. Es la única mujer en la papeleta, con las listas 2-12-61, Mashkas Primero.",
+    eps: {
+      origen: { t: "La abogada", k: "¿Quién es antes de la política?", d: "Derecho, nuevas tecnologías y la ESPE." },
+      tray: { t: "En lo público", k: "¿Qué ha hecho?", d: "La Asamblea, la contratación pública y una frase verificada del debate." },
+      exp: { t: "Listas 2-12-61", k: "¿Cómo llega a esta candidatura?", d: "Mashkas Primero y la seguridad en el transporte. Al final, los registros públicos." }
+    }
+  },
+  "latacunga|5": {
+    syn: "Patricio Sánchez es doctor en Jurisprudencia. Fue alcalde de Latacunga entre 2014 y 2019, cuando la Contraloría lo destituyó; él calificó la decisión de injusta. Llega con la lista 8, Avanza.",
+    eps: {
+      origen: { t: "El abogado", k: "¿Quién es antes de la política?", d: "Jurisprudencia y una campaña que sale de Aláquez." },
+      tray: { t: "Alcalde", k: "¿Qué ha hecho?", d: "Cinco años en el Municipio, una sanción con su respuesta y una frase verificada." },
+      exp: { t: "Lista 8", k: "¿Cómo llega a esta candidatura?", d: "Avanza y metas anuales en agua y vías. Al final, los registros públicos." }
+    }
+  },
+  "latacunga|6": {
+    syn: "Raúl Terán es ingeniero comercial y magíster en Administración de Empresas, con experiencia empresarial y financiera. No registra cargos públicos. Llega con las listas 20-23, Futuro Sí, Pasado No.",
+    eps: {
+      origen: { t: "El ingeniero", k: "¿Quién es antes de la política?", d: "Comercio, administración y finanzas." },
+      tray: { t: "Sin cargos públicos", k: "¿Qué ha hecho?", d: "Su hoja de vida y una frase verificada del debate." },
+      exp: { t: "Listas 20-23", k: "¿Cómo llega a esta candidatura?", d: "Futuro y SUMA, y su plan contra las fugas de agua. Al final, los registros públicos." }
+    }
+  },
+  "latacunga|7": {
+    syn: "Fabricio Tinajero es ingeniero de Empresas y doctor en Ciencias Organizacionales. Fue rector de la Universidad Técnica de Cotopaxi y es alcalde desde 2023. Busca la reelección con el Partido Socialista, lista 17.",
+    eps: {
+      origen: { t: "El académico", k: "¿Quién es antes de la política?", d: "Ingeniería, un doctorado y el rectorado de la UTC." },
+      tray: { t: "Alcalde", k: "¿Qué ha hecho?", d: "La victoria de 2023, la salida de Unidad Popular, un pedido de remoción y una frase verificada." },
+      exp: { t: "Lista 17", k: "¿Cómo llega a esta candidatura?", d: "La reelección y la red vial. Al final, los registros públicos." }
+    }
+  },
+  "latacunga|8": {
+    syn: "César Umajinga es doctor en Jurisprudencia. Fue prefecto de Cotopaxi hasta 2012, cuando la Contraloría lo destituyó; él dijo que el caso era político. Luego fue asambleísta y director regional del Ministerio del Trabajo. Llega con las listas 1-21.",
+    eps: {
+      origen: { t: "El abogado", k: "¿Quién es antes de la política?", d: "Jurisprudencia, ciencias políticas y doce años en la Prefectura." },
+      tray: { t: "Prefecto y asambleísta", k: "¿Qué ha hecho?", d: "Una destitución con su respuesta, la Asamblea, 2023 y una frase verificada." },
+      exp: { t: "Listas 1-21", k: "¿Cómo llega a esta candidatura?", d: "Su alianza y la convivencia barrial. Al final, los registros públicos." }
+    }
   }
 };

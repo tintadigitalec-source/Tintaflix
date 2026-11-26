@@ -34,3 +34,5 @@ Object.assign(window.FOTOS, { 'ibarra|0': 'arias', 'ibarra|1': 'cabezas', 'ibarr
 Object.assign(window.CIUDAD_FOTOS_COLOR, { ibarra: 'fotos/ibarra-ciudad-1-color.webp' });
 Object.assign(window.FOTOS, { 'ambato|0': 'altamirano', 'ambato|1': 'amoroso', 'ambato|2': 'caiza', 'ambato|3': 'lopez', 'ambato|4': 'naranjo', 'ambato|5': 'robayo', 'ambato|6': 'salazar', 'ambato|7': 'zuniga' });
 Object.assign(window.CIUDAD_FOTOS_COLOR, { ambato: 'fotos/ambato-ciudad-2-color.webp' });
+Object.assign(window.FOTOS, { 'latacunga|0': 'condor', 'latacunga|1': 'espin', 'latacunga|2': 'guaman', 'latacunga|3': 'iturralde', 'latacunga|4': 'pacheco', 'latacunga|5': 'sanchez', 'latacunga|6': 'teran', 'latacunga|7': 'tinajero', 'latacunga|8': 'umajinga' });
+Object.assign(window.CIUDAD_FOTOS_COLOR, { latacunga: 'fotos/latacunga-ciudad-2-color.webp' });
