@@ -838,7 +838,7 @@
 #cine.inter .cv img{-webkit-user-drag:none;user-select:none}
 
 .spr{display:block;position:relative;overflow:hidden;width:100%}
-.bn .spr img,.spr img{position:absolute!important;left:0;width:100%!important;max-width:none!important;display:block}
+.bn .spr img,.spr img{position:absolute!important;left:0;top:0;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover;display:block}
 span.bn.cut{display:block}
 
 /* rendimiento en computadora: sin desenfoque de fondo en la barra (costoso sobre una escena que se mueve) */

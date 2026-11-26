@@ -492,7 +492,7 @@
   }
   function generic(r, e) {
     const S = [], chs = [{ id: 'intro', t: e.t, k: 'Apertura' }];
-    S.push({ ch: 'intro', c: 'titulo', n: strip(e.d).split(/(?<=[.?!])\s/).slice(0, 2).join(' ') || e.t });
+    S.push({ ch: 'intro', c: 'titulo', n: strip(e.d).replace(/([.?!])\s/g, '$1\u0001').split('\u0001').slice(0, 2).join(' ') || e.t });
     if (e.id === 'origen') {
       if (r.f.length) {
         for (let i = 0; i < r.f.length; i += 3) { const it = r.f.slice(i, i + 3).map(x => [A.tc(x).replace(/\.$/, '')]); S.push({ ch: 'intro', c: 'arch', items: it, n: i ? 'Y también: ' + it.map(x => x[0]).join('; ') + '.' : '*Lo que registra* su hoja de vida: ' + it.map(x => x[0]).join('; ') + '.', src: 'hv' }) }

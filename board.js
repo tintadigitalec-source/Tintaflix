@@ -1,10 +1,39 @@
-/* Imagen normal o recorte de hoja (window.SPR: [hoja, y, alto, altoHoja]). */
+/* Imagen normal o recorte de hoja (window.SPR: [hoja, y, alto, altoHoja]).
+   El recorte se hace una vez en un canvas y se muestra como imagen pequeña:
+   en iPhone las hojas muy altas dentro de capas animadas dejaban la página
+   en blanco o la cerraban. */
+const SPR_PX = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
 function IM(src, alt) {
   const s = (window.SPR || {})[src], e = v => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   if (!s) return `<img src="${e(src)}" alt="${e(alt)}">`;
-  const [f, y, h, H] = s;
-  return `<span class="spr" style="aspect-ratio:900/${h}"><img src="${e(f)}" alt="${e(alt)}" style="top:${-(y / h * 100).toFixed(4)}%;height:${(H / h * 100).toFixed(4)}%"></span>`;
+  const u = SPRX.ready(src);
+  return `<span class="spr" style="aspect-ratio:900/${s[2]}"><img ${u ? `src="${u}"` : `src="${SPR_PX}" data-spr="${e(src)}"`} alt="${e(alt)}"></span>`;
 }
+window.SPRX = (function () {
+  const sheets = {}, urls = {}, done = {};
+  const sheet = f => {
+    const o = sheets[f] || (sheets[f] = { p: new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = f; }) });
+    clearTimeout(o.t); o.t = setTimeout(() => { delete sheets[f]; }, 15000);
+    return o.p;
+  };
+  const get = src => urls[src] || (urls[src] = sheet(SPR[src][0]).then(im => new Promise(res => {
+    const [, y, h] = SPR[src], w = im.naturalWidth, c = document.createElement('canvas');
+    c.width = w; c.height = h; c.getContext('2d').drawImage(im, 0, y, w, h, 0, 0, w, h);
+    const fin = u => { done[src] = u; res(u); };
+    if (c.toBlob) c.toBlob(b => fin(b ? URL.createObjectURL(b) : c.toDataURL('image/jpeg', 0.88)), 'image/jpeg', 0.88);
+    else fin(c.toDataURL('image/jpeg', 0.88));
+    c.width = c.height = 0;
+  })).catch(() => { delete urls[src]; return SPR_PX; }));
+  const fill = root => {
+    if (!root || root.nodeType !== 1) return;
+    const list = root.matches && root.matches('img[data-spr]') ? [root] : [];
+    root.querySelectorAll && list.push(...root.querySelectorAll('img[data-spr]'));
+    list.forEach(img => { const k = img.getAttribute('data-spr'); img.removeAttribute('data-spr'); get(k).then(u => { img.src = u; }); });
+  };
+  const start = () => { fill(document.body); new MutationObserver(ms => ms.forEach(m => m.addedNodes.forEach(fill))).observe(document.body, { childList: true, subtree: true }); };
+  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start);
+  return { ready: src => done[src], fill };
+})();
 /* =====================================================================
    TABLERO DOCUMENTAL · capítulos 1–3 (v15)
    Un «universo» de 1600×1000 con fotos, documentos, fechas y líneas que
