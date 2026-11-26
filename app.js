@@ -216,7 +216,7 @@ function showIntro(){if(window.INTRO2&&window.INTRO_SCREENS){const I=$('intro');
  setTimeout(()=>$('enterBtn').focus({preventScroll:true}),reduce?50:2400)}
 function hideIntro(){const I=$('intro');if(I.hidden)return;if(window.INTRO2)INTRO2.stop();cancelAnimationFrame(introRaf);introT.forEach(clearTimeout);I.hidden=true;document.body.classList.remove('lock')}
 function enterTV(skip){const I=$('intro');store.set('seenIntro',1);
- const go=()=>{location.hash=ST.city?'#inicio':'#ciudad'};
+ const go=()=>{location.hash='#ciudad'};
  if(skip||reduce){go();return}
  I.classList.add('enter');setTimeout(go,1150)}
 

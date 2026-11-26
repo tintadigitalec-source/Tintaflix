@@ -119,10 +119,11 @@
     const k = Math.max(innerWidth / r.width, innerHeight / r.height) * 1.35;
     const hx = r.left + r.width / 2, hy = r.top + r.height / 2;
     const dx = (innerWidth / 2 - hx) / stage._s, dy = (innerHeight / 2 - hy) / stage._s;
-    cam.style.transition = 'transform 1.2s cubic-bezier(.65,0,.3,1)';
+    const q = RM.matches ? .65 : 1; /* con «reducir movimiento» del sistema: el mismo paso por el cristal, más corto */
+    cam.style.transition = `transform ${1.2 * q}s cubic-bezier(.65,0,.3,1)`;
     cam.style.transform = `translate(${dx}px,${dy}px) scale(${(cur * k).toFixed(3)})`;
     noise(HERO); T(() => logo(HERO), 160);
-    I.classList.add('thru'); T(done, 1180);
+    I.classList.add('thru'); T(done, 1180 * q);
   }
 
   /* ---------- secuencia ---------- */
@@ -166,7 +167,7 @@
   function leave(skip) {
     if (leaving) return; leaving = true;
     const go = () => { leaving = false; onGo && onGo() };
-    if (skip || RM.matches) { go(); return }
+    if (skip) { go(); return }
     timers.forEach(clearTimeout); timers = []; through(go);
   }
   function onResize() { if (!alive) return; if (mode() !== layout) { const g = onGo; start(g); return } fit() }
