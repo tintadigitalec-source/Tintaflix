@@ -647,5 +647,37 @@ window.ED = {
       tray: { t: "Prefecto y asambleísta", k: "¿Qué ha hecho?", d: "Una destitución con su respuesta, la Asamblea, 2023 y una frase verificada." },
       exp: { t: "Listas 1-21", k: "¿Cómo llega a esta candidatura?", d: "Su alianza y la convivencia barrial. Al final, los registros públicos." }
     }
+  },
+  "zamora|0": {
+    syn: "Luis Balladares es doctor en Jurisprudencia y abogado. Fue secretario general y prosecretario de la Prefectura de Zamora Chinchipe y procurador síndico de Yacuambi. Llega con Fuerza Democrática.",
+    eps: {
+      origen: { t: "El abogado", k: "¿Quién es antes de la política?", d: "Jurisprudencia, ciencias sociales y lo que no consta." },
+      tray: { t: "En la Prefectura", k: "¿Qué ha hecho?", d: "La secretaría provincial, Yacuambi y el Municipio de Zamora." },
+      exp: { t: "Fuerza Democrática", k: "¿Cómo llega a esta candidatura?", d: "Su alianza y un plan de agua que empieza por el diagnóstico. Al final, los registros públicos." }
+    }
+  },
+  "zamora|1": {
+    syn: "Santiago Cabrera es ingeniero en Administración y Producción Agropecuaria y fue electo concejal rural de Zamora en 2023. Llega con las listas 1-6-23, Somos Confianza.",
+    eps: {
+      origen: { t: "El ingeniero", k: "¿Quién es antes de la política?", d: "Producción agropecuaria y un solo cargo público registrado." },
+      tray: { t: "Concejal", k: "¿Qué ha hecho?", d: "El Concejo de Zamora y un informe de rendición de cuentas que no consta." },
+      exp: { t: "Listas 1-6-23", k: "¿Cómo llega a esta candidatura?", d: "Somos Confianza y la alerta temprana. Al final, los registros públicos." }
+    }
+  },
+  "zamora|2": {
+    syn: "Wilman Rodríguez es doctor en Jurisprudencia y abogado. Fue jefe de Talento Humano del Municipio de Zamora y procurador síndico de Yantzaza. En 2023 quedó segundo para la Alcaldía. Llega con las listas 8-18-101.",
+    eps: {
+      origen: { t: "El abogado", k: "¿Quién es antes de la política?", d: "Jurisprudencia, ciencias sociales y un cargo contable." },
+      tray: { t: "En los municipios", k: "¿Qué ha hecho?", d: "Talento Humano, Yantzaza y la elección de 2023." },
+      exp: { t: "Listas 8-18-101", k: "¿Cómo llega a esta candidatura?", d: "Avanza, Pachakutik y PRIMIZA, y su plan vial. Al final, los registros públicos." }
+    }
+  },
+  "zamora|3": {
+    syn: "Patricia Simbaña es magíster e ingeniera en Administración de Empresas. Trabajó en el área de género de la Prefectura de Zamora Chinchipe. Es la única mujer en la papeleta, con la lista 7, ADN.",
+    eps: {
+      origen: { t: "La administradora", k: "¿Quién es antes de la política?", d: "Administración, secretariado bilingüe y la universidad." },
+      tray: { t: "En la Prefectura", k: "¿Qué ha hecho?", d: "El componente de género, el distrito de Agricultura y lo que no consta." },
+      exp: { t: "Lista 7", k: "¿Cómo llega a esta candidatura?", d: "ADN y su plan de agua. Al final, los registros públicos." }
+    }
   }
 };

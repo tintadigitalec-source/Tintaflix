@@ -2,7 +2,7 @@
    El aviso desaparece solo cuando pasa la hora del estreno. */
 (function () {
   const AT = '2026-11-26T12:00:00-05:00';               /* jueves 26 de noviembre, 12:00 (Ecuador) */
-  const CITIES = ['zamora', 'galapagos'];
+  const CITIES = ['galapagos'];
   const T = new Date(AT).getTime();
   const on = id => CITIES.includes(id) && Date.now() < T;
   const left = () => { const m = Math.max(0, Math.round((T - Date.now()) / 60000)); const h = Math.floor(m / 60); return h >= 24 ? `Faltan ${Math.floor(h / 24)} d ${h % 24} h` : h ? `Faltan ${h} h ${m % 60} min` : `Faltan ${m} min`; };

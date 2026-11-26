@@ -36,3 +36,5 @@ Object.assign(window.FOTOS, { 'ambato|0': 'altamirano', 'ambato|1': 'amoroso', '
 Object.assign(window.CIUDAD_FOTOS_COLOR, { ambato: 'fotos/ambato-ciudad-2-color.webp' });
 Object.assign(window.FOTOS, { 'latacunga|0': 'condor', 'latacunga|1': 'espin', 'latacunga|2': 'guaman', 'latacunga|3': 'iturralde', 'latacunga|4': 'pacheco', 'latacunga|5': 'sanchez', 'latacunga|6': 'teran', 'latacunga|7': 'tinajero', 'latacunga|8': 'umajinga' });
 Object.assign(window.CIUDAD_FOTOS_COLOR, { latacunga: 'fotos/latacunga-ciudad-2-color.webp' });
+Object.assign(window.FOTOS, { 'zamora|0': 'balladares', 'zamora|1': 'cabrera', 'zamora|2': 'rodriguez', 'zamora|3': 'simbana' });
+Object.assign(window.CIUDAD_FOTOS_COLOR, { zamora: 'fotos/zamora-ciudad-1-color.webp' });
