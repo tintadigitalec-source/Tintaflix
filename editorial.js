@@ -679,5 +679,37 @@ window.ED = {
       tray: { t: "En la Prefectura", k: "¿Qué ha hecho?", d: "El componente de género, el distrito de Agricultura y lo que no consta." },
       exp: { t: "Lista 7", k: "¿Cómo llega a esta candidatura?", d: "ADN y su plan de agua. Al final, los registros públicos." }
     }
+  },
+  "galapagos|0": {
+    syn: "Manuel Andrade es abogado e ingeniero en Desarrollo de Negocios, con dos maestrías en Derecho. Su único cargo público registrado es de analista de Talento Humano en el Hospital Oskar Jandl. Llega con la lista 61, Movimiento de Identidad Provincial.",
+    eps: {
+      origen: { t: "El abogado", k: "¿Quién es antes de la política?", d: "Derecho, negocios y dos maestrías." },
+      tray: { t: "En el hospital", k: "¿Qué ha hecho?", d: "Talento humano en el hospital de la isla y lo que no consta." },
+      exp: { t: "Lista 61", k: "¿Cómo llega a esta candidatura?", d: "El MIP y el alcantarillado de Floreana. Al final, los registros públicos." }
+    }
+  },
+  "galapagos|1": {
+    syn: "Hugo Caiza es ingeniero civil y alcalde de San Cristóbal desde 2023, cuando ganó con el 38,49 %. Como alcalde demandó ante la Corte Constitucional el alza de la tarifa de ingreso a Galápagos. Busca la reelección con la Alianza por la Prosperidad.",
+    eps: {
+      origen: { t: "El ingeniero", k: "¿Quién es antes de la política?", d: "Ingeniería civil y lo que no consta." },
+      tray: { t: "Alcalde", k: "¿Qué ha hecho?", d: "La elección de 2023 y la demanda contra la tarifa de ingreso." },
+      exp: { t: "Reelección", k: "¿Cómo llega a esta candidatura?", d: "Su alianza y el centro de residuos. Al final, los registros públicos." }
+    }
+  },
+  "galapagos|2": {
+    syn: "Zenaida Freire es abogada y guía profesional de turismo. No registra cargos públicos. Llega con Somos Luz y Esperanza.",
+    eps: {
+      origen: { t: "La abogada", k: "¿Quién es antes de la política?", d: "Derecho y turismo." },
+      tray: { t: "Sin cargos públicos", k: "¿Qué ha hecho?", d: "Su hoja de vida y lo que no consta." },
+      exp: { t: "Somos Luz y Esperanza", k: "¿Cómo llega a esta candidatura?", d: "Su movimiento y una nueva planta de aguas residuales. Al final, los registros públicos." }
+    }
+  },
+  "galapagos|3": {
+    syn: "Jeimy Ochoa es médica veterinaria y magíster en Sanidad Animal. Registra un cargo público, teniente política. Llega con la lista 7, ADN.",
+    eps: {
+      origen: { t: "La veterinaria", k: "¿Quién es antes de la política?", d: "Veterinaria y sanidad animal." },
+      tray: { t: "Teniente política", k: "¿Qué ha hecho?", d: "Su único cargo registrado y lo que no consta." },
+      exp: { t: "Lista 7", k: "¿Cómo llega a esta candidatura?", d: "ADN y un centro de faenamiento. Al final, los registros públicos." }
+    }
   }
 };

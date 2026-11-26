@@ -38,3 +38,5 @@ Object.assign(window.FOTOS, { 'latacunga|0': 'condor', 'latacunga|1': 'espin', '
 Object.assign(window.CIUDAD_FOTOS_COLOR, { latacunga: 'fotos/latacunga-ciudad-2-color.webp' });
 Object.assign(window.FOTOS, { 'zamora|0': 'balladares', 'zamora|1': 'cabrera', 'zamora|2': 'rodriguez', 'zamora|3': 'simbana' });
 Object.assign(window.CIUDAD_FOTOS_COLOR, { zamora: 'fotos/zamora-ciudad-1-color.webp' });
+Object.assign(window.FOTOS, { 'galapagos|0': 'andrade', 'galapagos|2': 'freire', 'galapagos|3': 'ochoa' });
+Object.assign(window.CIUDAD_FOTOS_COLOR, { galapagos: 'fotos/galapagos-ciudad-1-color.webp' });
