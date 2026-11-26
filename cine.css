@@ -30,7 +30,7 @@
 #cine .tag-ctx.on{opacity:1}
 
 /* ---------- plano ---------- */
-.shot{position:absolute;inset:0;animation:shin .55s ease both,shout .4s ease calc(var(--D) - .4s) forwards}
+.shot{position:absolute;inset:0;animation:shin .55s ease backwards,shout .4s ease calc(var(--D) - .4s) forwards}
 .cam{position:absolute;inset:0;transform-origin:50% 45%}
 .cam.push{animation:push var(--D) linear both}
 .cam.pull{animation:pull var(--D) linear both}
@@ -692,7 +692,7 @@
 .bl.on{stroke-dashoffset:0}.bl.rv{animation:adraw 1.1s ease var(--d) forwards}
 .bd{fill:#e50914}.bd.rv{animation:apop .4s ease var(--d) both}
 .bn{position:absolute;margin:0;transform:rotate(var(--r))}
-.bn.rv{animation:bnin .9s cubic-bezier(.2,.85,.25,1) var(--d) both}
+.bn.rv{animation:bnin .9s cubic-bezier(.2,.85,.25,1) var(--d) backwards}
 @keyframes bnin{0%{opacity:0;transform:translate3d(0,40px,0) rotate(calc(var(--r) * 3)) scale(1.18);filter:blur(8px)}100%{opacity:1;transform:rotate(var(--r));filter:none}}
 .bn.ph{background:#111;padding:10px 10px 0;box-shadow:0 24px 60px rgba(0,0,0,.8)}
 .bn.ph img{display:block;width:100%;height:auto}
@@ -716,7 +716,7 @@
 .bn.dt{font:400 200px/.8 "Bebas Neue",sans-serif;color:#fff;text-shadow:0 8px 50px rgba(0,0,0,.9)}
 .bn.dt.y,.bn.wd{color:#ffd21f}
 .bn.wd{font:400 92px/.9 "Bebas Neue",sans-serif;white-space:nowrap;text-shadow:0 6px 40px rgba(0,0,0,.9)}
-.bn.rv.dt,.bn.rv.wd{animation:bdt .8s cubic-bezier(.2,.9,.25,1.15) var(--d) both}
+.bn.rv.dt,.bn.rv.wd{animation:bdt .8s cubic-bezier(.2,.9,.25,1.15) var(--d) backwards}
 @keyframes bdt{from{opacity:0;transform:scale(1.8) rotate(var(--r));filter:blur(10px);letter-spacing:.2em}to{opacity:1;transform:rotate(var(--r));filter:none}}
 .bshade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 46%,rgba(6,6,6,.88) 66%,#060606 92%)}
 @container cv (min-aspect-ratio:1/1){.bshade{background:linear-gradient(90deg,#060606 0%,rgba(6,6,6,.9) 30%,transparent 50%)}}
@@ -738,7 +738,7 @@
 .bn.tx mark{background:none;color:#ffd21f;font-weight:800}
 .bn.tx b mark{color:#ffd21f;font-weight:400}
 .bn.tx.rv{animation:none}
-.bn.tx.rv .kk,.bn.tx.rv b{animation:bnin .8s cubic-bezier(.2,.85,.25,1) var(--d) both}
+.bn.tx.rv .kk,.bn.tx.rv b{animation:bnin .8s cubic-bezier(.2,.85,.25,1) var(--d) backwards}
 .bn.tx.rv p{animation:txp .7s ease calc(var(--d) + .45s) both}
 @keyframes txp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .bn.ph.sm figcaption{font-size:16px;color:#8d8d8d}
@@ -768,11 +768,11 @@
 @keyframes phint{0%,100%{transform:translateX(0)}50%{transform:translateX(-10px)}}
 @media (max-width:560px){.pnav .pill span{display:none}.pnav .pill{padding:8px 10px}.pnav .psep{margin:0 1px}}
 /* movimiento ambiental mientras se lee: solo el fondo de ciudad, muy lento */
-.c-board.v2.hold .bn.ph.bgph{animation:ambdrift 26s ease-in-out infinite alternate}
+.c-board.v2.hold .bn.ph.bgph{animation:ambdrift 26s ease-in-out infinite alternate;will-change:translate}
 @keyframes ambdrift{from{translate:0 0}to{translate:-60px -24px}}
 #cine.rm .c-board.v2.hold .bn.ph.bgph{animation:none}
 #cine.inter.hideui{cursor:auto}
-#cine.inter .shot{animation:shin .55s ease both}
+#cine.inter .shot{animation:shin .55s ease backwards}
 #cine.inter .shot.bcont{animation:none}
 @container cv (min-aspect-ratio:1/1){#cine.inter .c-board.v2 .bwl{top:45%}}
 #cine.inter .c-board.v2 .bwl{top:42%}
@@ -840,3 +840,7 @@
 .spr{display:block;position:relative;overflow:hidden;width:100%}
 .bn .spr img,.spr img{position:absolute!important;left:0;width:100%!important;max-width:none!important;display:block}
 span.bn.cut{display:block}
+
+/* rendimiento en computadora: sin desenfoque de fondo en la barra (costoso sobre una escena que se mueve) */
+@media (hover:hover) and (pointer:fine){.pnav .pbar{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(10,10,10,.9)}}
+@media (hover:hover) and (pointer:fine){#cine.inter #cv{cursor:pointer}}

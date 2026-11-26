@@ -2,7 +2,8 @@
 #intro.v2{background:#050506;display:block;cursor:pointer}
 #intro.v2 .ix-stage{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
 #intro.v2 .ix-cam{position:absolute;inset:0;transform-origin:50% 50%;will-change:transform}
-#intro.v2 .ix-plate{position:absolute;inset:0;width:100%;height:100%;display:block;filter:brightness(calc(var(--room,.08) * 1.25)) contrast(1.06) saturate(.85);transition:filter 1.6s ease}
+#intro.v2 .ix-plate{position:absolute;inset:0;width:100%;height:100%;display:block;filter:contrast(1.06) saturate(.85)}
+#intro.v2 .ix-dark{position:absolute;inset:0;pointer-events:none;background:#000;opacity:calc(1 - min(1, var(--room,.08) * 1.25));transition:opacity 1.6s ease}
 #intro.v2 .ix-edge{position:absolute;inset:-2px;pointer-events:none;background:radial-gradient(ellipse 60% 62% at 50% 52%,transparent 55%,rgba(5,5,6,.75) 82%,#050506 100%)}
 #intro.v2 .ix-glow{position:absolute;pointer-events:none;border-radius:50%;opacity:0;mix-blend-mode:screen;transition:opacity .5s ease;
   background:radial-gradient(closest-side,rgba(190,210,255,.30),rgba(150,175,235,.10) 55%,transparent 100%);filter:blur(6px)}
@@ -28,9 +29,9 @@
   background:repeating-linear-gradient(180deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px),
     radial-gradient(ellipse 70% 70% at 50% 50%,transparent 55%,rgba(0,0,0,.55) 100%);mix-blend-mode:multiply}
 #intro.v2 .ix-roll{position:absolute;left:0;right:0;height:30%;top:-30%;pointer-events:none;background:linear-gradient(180deg,transparent,rgba(255,255,255,.07),transparent);animation:ixroll 3.4s linear infinite}
-#intro.v2 .ix-flk{position:absolute;inset:0;pointer-events:none;background:#fff;opacity:0;mix-blend-mode:overlay;animation:ixflk .13s steps(2) infinite}
+#intro.v2 .ix-flk{position:absolute;inset:0;pointer-events:none;background:#fff;opacity:0;animation:ixflk .13s steps(2) infinite}
 @keyframes ixroll{to{top:100%}}
-@keyframes ixflk{50%{opacity:.04}}
+@keyframes ixflk{50%{opacity:.02}}
 /* encendido: línea blanca que se abre */
 #intro.v2 .ix-box .pon{background:#000;display:grid;place-items:center}
 #intro.v2 .ix-box .pon i{display:block;width:100%;height:2px;background:#fff;box-shadow:0 0 12px 3px rgba(220,235,255,.9);animation:ixpon .32s cubic-bezier(.2,.8,.2,1) forwards}
@@ -38,7 +39,7 @@
 /* reflejos naturales del cristal (placa) */
 #intro.v2 .ix-refl{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:screen;opacity:.85}
 /* grano fotográfico y viñeta sobre todo el cuadro */
-#intro.v2 .ix-grain{position:absolute;inset:-60px;pointer-events:none;opacity:.13;mix-blend-mode:overlay;background-size:256px 256px;animation:ixgr .5s steps(5) infinite}
+#intro.v2 .ix-grain{position:absolute;inset:-60px;pointer-events:none;opacity:.06;background-size:256px 256px;animation:ixgr .5s steps(5) infinite;will-change:transform}
 @keyframes ixgr{20%{transform:translate(-37px,23px)}40%{transform:translate(29px,-41px)}60%{transform:translate(-17px,-13px)}80%{transform:translate(43px,31px)}}
 #intro.v2 .ix-vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 75% at 50% 50%,transparent 50%,rgba(0,0,0,.6))}
 /* llamada a entrar */

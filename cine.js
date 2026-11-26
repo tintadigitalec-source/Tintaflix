@@ -575,7 +575,7 @@
          <button class="ib" id="cSrcB" aria-label="Fuentes">${ic('src')}</button>
          <button class="ib hid-s" id="cNx" aria-label="Siguiente episodio">${ic('next')}</button>
          <button class="ib" id="cFs" aria-label="Pantalla completa">${ic('fs')}</button></div></div></div>
-      <nav class="pnav" id="cNav" aria-label="Navegación del capítulo"><p class="phint" id="cHint">Desliza para continuar</p>
+      <nav class="pnav" id="cNav" aria-label="Navegación del capítulo"><p class="phint" id="cHint">${matchMedia('(hover:hover) and (pointer:fine)').matches ? 'Haz clic o usa → para continuar' : 'Desliza para continuar'}</p>
        <div class="pbar"><button class="ib" id="cPrev" aria-label="Escena anterior">${ic('back')}</button><span class="pcount" id="cCount" aria-live="polite">01/01</span><button class="ib pnext" id="cNext" aria-label="Escena siguiente">${ic('back')}</button>
         <span class="psep"></span><button class="pill" id="cNSrc" type="button">${ic('src')}<span>Fuentes</span></button><button class="pill" id="cNTxt" type="button">${ic('txt')}<span>Texto</span></button><button class="pill" id="cNCat" type="button">${ic('ch')}<span>Episodios</span></button></div></nav>
       <aside class="pside" id="cSide" aria-label="Panel del episodio"><header><div class="tabs" id="cTabs"></div><button class="ib" id="cSideX" aria-label="Cerrar panel">${ic('close')}</button></header><div class="body" id="cSideB"></div></aside>
@@ -903,7 +903,7 @@
     document.addEventListener('touchend', ev => { const t = ev.changedTouches && ev.changedTouches[0]; if (t) gMove(t.clientX, t.clientY); gEnd() }, true);
     document.addEventListener('touchcancel', () => gEnd(), true);
     cv.addEventListener('dragstart', ev => { if (E.inter) ev.preventDefault() });
-    cv.addEventListener('wheel', ev => { if (!E.inter || Math.abs(ev.deltaX) < 30 || Math.abs(ev.deltaX) < Math.abs(ev.deltaY)) return; ev.preventDefault(); const now = Date.now(); if (now - wl < 800) return; wl = now; go(ev.deltaX > 0 ? 1 : -1) }, { passive: false });
+    cv.addEventListener('wheel', ev => { if (!E.inter || E.panel) return; const d = Math.abs(ev.deltaX) >= Math.abs(ev.deltaY) ? ev.deltaX : ev.deltaY; if (Math.abs(d) < 30) return; ev.preventDefault(); const now = Date.now(); if (now - wl < 800) return; wl = now; go(d > 0 ? 1 : -1) }, { passive: false });
     $('cNx').onclick = () => goNext();
     $('cCmp').onclick = () => cmpToggle();
     const R = [.75, 1, 1.25, 1.5];
@@ -920,7 +920,9 @@
     let lastTap = 0;
     cv.addEventListener('click', ev => {
       if (E.panel) { closePanel(); return }
-      if (E.inter) return;
+      if (E.inter) { /* computadora: clic en la escena = avanzar (tercio izquierdo = retroceder) */
+        if (matchMedia('(hover:none)').matches || ev.target.closest('button,a') || Date.now() - (E._swiped || 0) < 400) return;
+        go(ev.clientX / innerWidth < .3 ? -1 : 1); return }
       const now = Date.now(), x = ev.clientX / innerWidth, touch = matchMedia('(hover:none)').matches;
       if (now - lastTap < 300 && (x < .33 || x > .67)) { seek(E.t + (x < .5 ? -10 : 10), x < .5 ? -1 : 1); lastTap = 0; return }
       lastTap = now;

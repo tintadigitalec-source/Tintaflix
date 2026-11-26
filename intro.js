@@ -26,7 +26,7 @@
     I = document.getElementById('intro'); I.classList.add('v2');
     layout = mode(); const L = SCR[layout]; if (!L) return false;
     I.innerHTML = `<div class="ix-stage"><div class="ix-cam">
-        <img class="ix-plate" src="img/intro/plate-${layout}.webp" alt="" decoding="async">
+        <img class="ix-plate" src="img/intro/plate-${layout}.webp" alt="" decoding="async"><div class="ix-dark"></div>
         ${Object.keys(L.s).map(k => `<div class="ix-glow" data-g="${k}"></div>`).join('')}
         ${Object.keys(L.s).map(k => `<div class="ix-scr" data-s="${k}"><div class="ix-box"></div></div>`).join('')}
         <img class="ix-refl" src="img/intro/refl-${layout}.webp" alt="" decoding="async">
@@ -35,7 +35,7 @@
       <button class="skip" id="skipBtn" type="button">Saltar intro</button>
       <div class="ix-cta" role="group" aria-label="Entrada">
         <button class="btn" id="enterBtn" type="button"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><span>Entra a TINTAFLIX</span></button>
-        <small class="tap">Toca la pantalla · Las candidaturas a la alcaldía, contadas como series</small></div>
+        <small class="tap">${matchMedia('(hover:hover) and (pointer:fine)').matches ? 'Haz clic' : 'Toca la pantalla'} · Las candidaturas a la alcaldía, contadas como series</small></div>
       <p class="introfoot">Una producción de Tinta Digital · Seccionales 2026</p>`;
     I.setAttribute('role', 'dialog'); I.setAttribute('aria-label', 'Entrada a TINTAFLIX: una instalación de televisores antiguos se enciende con fragmentos de las ciudades');
     stage = I.querySelector('.ix-stage'); cam = I.querySelector('.ix-cam');
@@ -109,7 +109,7 @@
     };
     raf = requestAnimationFrame(step);
   }
-  function room(v) { I.querySelector('.ix-plate').style.setProperty('--room', v) }
+  function room(v) { const d = I.querySelector('.ix-dark'); if (d) d.style.setProperty('--room', v) }
 
   /* ---------- cámara ---------- */
   function heroOrigin() { const b = boxes[HERO].b; return `${(b.x + b.w / 2) * 100}% ${(b.y + b.h / 2) * 100}%` }
