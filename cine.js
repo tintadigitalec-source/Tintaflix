@@ -505,8 +505,9 @@
       }
       if (r.ult) S.push({ ch: 'intro', c: 'idea', icon: 'maletin', kick: 'Última escena registrada', t: `${r.ult[0]}, ${r.ult[1]} (${r.ult[2]})`, n: `La última escena registrada: *${r.ult[0]}*, ${r.ult[1]}, en ${r.ult[2]}.`, src: 'hv' });
     } else if (e.id === 'exp') {
-      A.CHECKS.forEach(([f, l, dsc]) => { const hit = r.fl.includes(f); S.push({ ch: 'intro', c: 'sello', t: hit ? 'Sí registra' : 'No registra', rest: `${l} · ${dsc}`, n: `${l}: ${hit ? '*sí registra*' : '*no registra*'}. ${dsc}.`, src: 'consulta' }) });
-      S.push({ ch: 'intro', c: 'remate', t: 'Consulta a registros públicos con corte al *24 de noviembre de 2026*.', n: 'Consulta a registros públicos con corte al *24 de noviembre* de 2026.', src: 'consulta' });
+      if (r.nc) S.push({ ch: 'intro', c: 'sello', t: 'Sin consulta', rest: 'Antecedentes penales · SRI · Pensiones alimenticias', n: 'Para esta ciudad *no hicimos* la consulta a registros públicos: no afirmamos ni descartamos nada.', src: 'consulta' });
+      else A.CHECKS.forEach(([f, l, dsc]) => { const hit = r.fl.includes(f); S.push({ ch: 'intro', c: 'sello', t: hit ? 'Sí registra' : 'No registra', rest: `${l} · ${dsc}`, n: `${l}: ${hit ? '*sí registra*' : '*no registra*'}. ${dsc}.`, src: 'consulta' }) });
+      if (!r.nc) S.push({ ch: 'intro', c: 'remate', t: 'Consulta a registros públicos con corte al *24 de noviembre de 2026*.', n: 'Consulta a registros públicos con corte al *24 de noviembre* de 2026.', src: 'consulta' });
     } else {
       const R = A.rich(r), RX = R && R[e.id]; const L = A.props(r, e.id) || [], n = L.length, ax = (A.th(e.id).ax || '').toLowerCase();
       S.length = 0;

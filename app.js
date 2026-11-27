@@ -20,7 +20,7 @@ const CITIES=window.CITIES.map(([id,name,sub,list],ci)=>{
   const exp=(r[3]?r[3].split('|'):[]).map(x=>{const k=x.indexOf(' - ');return k<0?[x,'']:[x.slice(0,k),x.slice(k+3)]});
   const cne=((window.PLAN_CNE||{})[id]||{})[sur];const scan=((window.SCAN||{})[id]||[]).includes(sur);const logo=((window.LOGOS||{})[id]||{})[sur];const per=((window.PERIODOS||{})[id]||{})[sur]||[];const ult=((window.ULTIMO||{})[id]||{})[sur]||null;
   return {key:id+'|'+j,sur,c,j,full:tc(r[0]),short,org:m?m[2]:tc(r[1]),lista:m?m[0]:'',plan:m&&m[3]?window.PLAN_BASE+m[3]:(cne?window.CNE_BASE+cne:''),scan,
-   f:r[2]?r[2].split('|'):[],e:exp,fl:r[4]||'',prop:prop[sur]||null,p2:((window.PROPS2||{})[id]||{})[sur]||null,logo:logo?(window.LOGO_BASE||'')+logo+'.webp':'',per,ult,pc:PAL[(ci*3+j)%PAL.length]}});
+   f:r[2]?r[2].split('|'):[],e:exp,fl:r[4]||'',nc:!!(window.NOCONS||{})[id],prop:prop[sur]||null,p2:((window.PROPS2||{})[id]||{})[sur]||null,logo:logo?(window.LOGO_BASE||'')+logo+'.webp':'',per,ult,pc:PAL[(ci*3+j)%PAL.length]}});
  return c});
 const ALL=CITIES.flatMap(c=>c.list);
 const byKey=k=>ALL.find(r=>r.key===k);
@@ -76,7 +76,7 @@ function trayHTML(r){if(!r.e.length)return `El capítulo más corto de la tempor
  let s=`${n===1?'Una temporada de un solo acto':'Una temporada de '+n+' actos'}${span&&span.includes('–')?' entre '+span:''}. `+acts.join(' · ')+(n>4?` · y ${n-4} más`:'')+'.';
  if(r.ult)s+=` Última escena registrada: ${B(r.ult[0]+', '+r.ult[1]+' ('+r.ult[2]+')')}.`;
  return s+' ¿Suma o resta en la papeleta?'}
-function expHTML(r){const hits=CHECKS.filter(([f])=>r.fl.includes(f)).map(([,l])=>l);const miss=CHECKS.filter(([f])=>!r.fl.includes(f)).map(([,l])=>l);
+function expHTML(r){if(r.nc)return `Para las candidaturas de ${esc(r.c.name)} ${B('no hicimos')} la consulta a registros públicos (antecedentes penales, obligaciones con el SRI y pensiones alimenticias): no afirmamos ni descartamos nada sobre esos tres registros.`;const hits=CHECKS.filter(([f])=>r.fl.includes(f)).map(([,l])=>l);const miss=CHECKS.filter(([f])=>!r.fl.includes(f)).map(([,l])=>l);
  if(!hits.length)return `El capítulo que nadie quiere protagonizar: antecedentes penales, obligaciones con el SRI y pensiones alimenticias. ${r.short} ${B('no registra nada en los tres')}. Expediente limpio en esta consulta.`;
  return `El capítulo que nadie quiere protagonizar. En la consulta a registros públicos, ${r.short} ${B('SÍ registra: '+hits.join(' y '))}${miss.length?'; no registra '+lc(miss.join(' ni ')):''}. Dato duro, sin adjetivos.`}
 const slugify=t=>norm(t).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
@@ -144,7 +144,7 @@ function genericSyn(r,e){
  if(!L)return `<p>${r.scan?'Episodio en transcripción: el CNE publicó este plan como imagen escaneada.':(r.plan?'Episodio en producción: estamos revisando su plan de trabajo.':'El plan de trabajo no está disponible en el CNE: no hay guion para este capítulo.')}</p>`;
  if(!L.length)return `<p><b>El plan no incluye propuestas sobre ${esc(lc(e.k))}.</b> Lo decimos tal cual: este capítulo no tiene guion.</p>`;
  const n=L.length;return `<p>${n>=3?`<b>${n} propuestas</b> en este capítulo`:`<b>Solo ${n} ${n===1?'propuesta':'propuestas'}</b> en este tema; el plan no contiene más`}: ${L.map(x=>esc(x.t)).join(' · ')}.</p>`}
-function genericWhen(r,e){if(e.id==='origen')return 'Hoja de vida';if(e.id==='tray')return yearsSpan(r)||'Hoja de vida';if(e.id==='exp')return 'Consulta 2026';return props(r,e.id)?'Plan de trabajo 2027–2031':'Próximamente'}
+function genericWhen(r,e){if(e.id==='origen')return 'Hoja de vida';if(e.id==='tray')return yearsSpan(r)||'Hoja de vida';if(e.id==='exp')return r.nc?'Hoja de vida':'Consulta 2026';return props(r,e.id)?'Plan de trabajo 2027–2031':'Próximamente'}
 function epList(r){const E=(rich(r)||{}).eps||{},X=((window.ED||{})[r.key]||{}).eps||{};
  return EPS.map((e,i)=>{const o={...(E[e.id]||{}),...(X[e.id]||{})};return {...e,k:o.k||e.k,n:i+1,t:o.t||e.def,when:o.when||genericWhen(r,e),d:o.d?paras(o.d):genericSyn(r,e),pilot:!!o.pilot,
   ok:['origen','tray','exp'].includes(e.id)||!!props(r,e.id)}})}
@@ -358,7 +358,7 @@ function cmpTray(L){const row=(l,f)=>`<div class="subt"><h3>${l}</h3><div class=
   ${row('Formación',r=>r.f.length?`<ul>${r.f.map(x=>`<li>${esc(tc(x))}</li>`).join('')}</ul>`:'<p class="none">No registra formación académica.</p>')}
   ${row('Cargos públicos en la hoja de vida',r=>r.e.length?`<ul>${r.e.map(([a,b])=>{const per=rolePeriod(r,a);return `<li><b>${esc(tc(a))}</b>${b?`, ${esc(tc(gad(b)))}`:''}${per?` <small>(${esc(per)})</small>`:''}</li>`}).join('')}</ul>`:'<p class="none">No registra cargos públicos previos.</p>')}
   ${row('Último cargo registrado',r=>r.ult?`<p>${esc(r.ult[0])}, ${esc(r.ult[1])} (${r.ult[2]})</p>`:'<p class="none">No especificado.</p>')}
-  ${row('Consultas públicas',r=>`<ul>${CHECKS.map(([f,l])=>`<li>${esc(l)}: <b>${r.fl.includes(f)?'sí registra':'no registra'}</b></li>`).join('')}</ul>`)}</div>`}
+  ${row('Consultas públicas',r=>r.nc?'<p class="none">No consultado.</p>':`<ul>${CHECKS.map(([f,l])=>`<li>${esc(l)}: <b>${r.fl.includes(f)?'sí registra':'no registra'}</b></li>`).join('')}</ul>`)}</div>`}
 
 /* ---------- MI LISTA ---------- */
 function setVerd(r,id,v){const k=verdKey(r,id);if(v==='del')delete ST.verd[k];else ST.verd[k]={v,ts:Date.now()};save('verd')}
@@ -388,7 +388,7 @@ function buildScenes(r,e){const th=thOf(e.id);const S=[];
   r.e.forEach(([a,b],i)=>{const per=rolePeriod(r,a);const tag=roleTag(a,b);S.push(sc({st:'archivo',h:tc(a),b:`<p>${b?esc(tc(gad(b))):''}${per?` · <b>${esc(per)}</b>`:''}</p><p class="tagl" style="--tg:${tag[1]}">${esc(tag[0])}</p>`,viz:'archivo',vizo:{r,i},src:'hv',kick:`Acto ${i+1} de ${r.e.length}`}))});
   if(r.ult)S.push(sc({st:'archivo',h:'Última escena registrada',b:`<p><b>${esc(r.ult[0])}</b>, ${esc(r.ult[1])} (${r.ult[2]}).</p>`,viz:'archivo',vizo:{r,i:-1},src:'hv'}));
  }else if(e.id==='exp'){
-  S.push(sc({st:'archivo',h:'Tres consultas, una respuesta',b:`<p>${expHTML(r)}</p>`,viz:'expediente',vizo:{r},src:'consulta'}));
+  S.push(r.nc?sc({st:'archivo',h:'Consulta no realizada',b:`<p>${expHTML(r)}</p>`,viz:'icono',vizo:{icon:'idea'},src:'consulta'}):sc({st:'archivo',h:'Tres consultas, una respuesta',b:`<p>${expHTML(r)}</p>`,viz:'expediente',vizo:{r},src:'consulta'}));
  }else{const R=rich(r);const RX=R&&R[e.id];const L=props(r,e.id)||[];const n=L.length;
   if(RX&&RX.open)RX.open.forEach(s=>S.push(sc({...s,b:paras(s.b)})));
   else S.push(sc({st:'indice',h:n?(n>=3?`${n} propuestas en este capítulo`:`Solo ${n} ${n===1?'propuesta':'propuestas'} en este tema`):'Este plan no incluye propuestas sobre el tema',b:n?(n<3?'<p>El plan no contiene más propuestas sobre este tema. Las vemos una por una: qué plantea, qué significa y cómo dice que lo haría.</p>':'<p>Las vemos una por una: qué plantea, qué significa y cómo dice que lo haría.</p>'):'<p>Revisamos el plan de trabajo completo inscrito en el CNE.</p>',viz:'indice',src:'plan'}));
